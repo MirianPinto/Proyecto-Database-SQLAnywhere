@@ -1,8 +1,12 @@
 #pragma once
-#include <iostream>
+
+#include "MyForm.h"
 
 namespace CppCLRWinFormsProject {
 
+	#include "MyForm.h";
+	
+	
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -11,6 +15,8 @@ namespace CppCLRWinFormsProject {
 	using namespace System::Drawing;
 
 	using namespace System::Data::Odbc;
+
+	using namespace Proyecto_TDatabase;
 	
 	
 
@@ -27,6 +33,10 @@ namespace CppCLRWinFormsProject {
 			//TODO: Add the constructor code here
 			//
 		}
+		System::Windows::Forms::TextBox^ textBox2;
+
+	public:
+		System::Windows::Forms::TextBox^ textBox1;
 
 	protected:
 		/// <summary>
@@ -40,18 +50,18 @@ namespace CppCLRWinFormsProject {
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: 
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: 
+
 	protected:
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -65,8 +75,6 @@ namespace CppCLRWinFormsProject {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -115,22 +123,11 @@ namespace CppCLRWinFormsProject {
 			this->textBox2->Size = System::Drawing::Size(155, 22);
 			this->textBox2->TabIndex = 4;
 			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(12, 26);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(703, 343);
-			this->dataGridView1->TabIndex = 5;
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(727, 501);
-			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -138,8 +135,6 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->button1);
 			this->Name = L"Form1";
 			this->Text = L"Usuario";
-			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -147,29 +142,34 @@ namespace CppCLRWinFormsProject {
 #pragma endregion
 
 		
-
-		String^ connString = "Dsn=TBD1;uid=Admin-Mirian";
-		OdbcConnection^ CON = gcnew OdbcConnection("Dsn=TBD1;uid=Admin-Mirian");
-
+		
 		void ConnectionDB()
 		{
 			try
 			{
+
+				String^ user = textBox2->Text;
+				String^ pas = textBox1->Text;
+				String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
+				OdbcConnection^ CON = gcnew OdbcConnection(connString);
 				CON->Open();
-				OdbcCommand^ cmd = CON->CreateCommand();
+				/*OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
-				cmd->CommandText = "Select * from Estudiante";
+				cmd->CommandText = "SELECT user_name, password FROM SYS.SYSUSERPERM";
 				cmd->ExecuteNonQuery();
 
 				DataTable^ dt = gcnew DataTable();
 				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
 				dp->Fill(dt);
-				dataGridView1->DataSource = dt;
-				CON->Close();
+				
+				CON->Close();*/
+
+				this->Visible = false;
+				MyForm^ tt = gcnew MyForm(textBox2->Text, textBox1->Text);
+				tt->Show();
 
 				
-				
-				MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 
 
@@ -183,7 +183,13 @@ namespace CppCLRWinFormsProject {
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		
+
 		ConnectionDB();
+
+		
+		
+
+		
 
 		/*String^ Ic = this->textBox1->Text;
 
@@ -210,7 +216,6 @@ namespace CppCLRWinFormsProject {
 	}
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+	
 };
 }
