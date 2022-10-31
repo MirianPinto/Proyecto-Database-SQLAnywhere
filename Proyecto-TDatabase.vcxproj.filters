@@ -29,13 +29,40 @@
     <ClInclude Include="Form1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Conexion.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CrearUsuarios.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Opciones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Conexiones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vistas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Procedimientos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Disparadores.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Usuarios.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Indices.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Funciones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Secuencias.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablespaces.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -60,6 +87,36 @@
     </ClCompile>
     <ClCompile Include="CrearUsuarios.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Opciones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Conexiones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vistas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Procedimientos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Disparadores.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Usuarios.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Indices.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Funciones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Secuencias.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tablespaces.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

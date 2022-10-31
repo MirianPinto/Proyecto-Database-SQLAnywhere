@@ -130,32 +130,71 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Conexion.h" />
+    <ClInclude Include="Conexiones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CrearUsuarios.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Disparadores.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Funciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Indices.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Opciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Procedimientos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Secuencias.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Tablespaces.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Usuarios.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Vistas.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Conexion.cpp" />
+    <ClCompile Include="Conexiones.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="CrearUsuarios.cpp" />
+    <ClCompile Include="Disparadores.cpp" />
     <ClCompile Include="Form1.cpp" />
+    <ClCompile Include="Funciones.cpp" />
+    <ClCompile Include="Indices.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Opciones.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Procedimientos.cpp" />
+    <ClCompile Include="Secuencias.cpp" />
+    <ClCompile Include="Tablespaces.cpp" />
+    <ClCompile Include="Usuarios.cpp" />
+    <ClCompile Include="Vistas.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -168,14 +207,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Conexiones.resx">
+      <DependentUpon>Conexiones.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearUsuarios.resx">
       <DependentUpon>CrearUsuarios.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Disparadores.resx">
+      <DependentUpon>Disparadores.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Funciones.resx">
+      <DependentUpon>Funciones.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indices.resx">
+      <DependentUpon>Indices.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opciones.resx">
+      <DependentUpon>Opciones.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procedimientos.resx">
+      <DependentUpon>Procedimientos.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secuencias.resx">
+      <DependentUpon>Secuencias.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tablespaces.resx">
+      <DependentUpon>Tablespaces.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas.resx">
+      <DependentUpon>Vistas.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

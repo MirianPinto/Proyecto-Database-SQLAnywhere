@@ -1,10 +1,7 @@
 #pragma once
-#include "CrearUsuarios.h"
-
 
 namespace Proyecto_TDatabase {
-#include "CrearUsuarios.h"
-   
+
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -12,21 +9,18 @@ namespace Proyecto_TDatabase {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+
 	using namespace System::Data::Odbc;
 	using namespace Proyecto_TDatabase;
-	
-
 
 
 	/// <summary>
-	/// Resumen de MyForm
+	/// Resumen de Vistas
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class Vistas : public System::Windows::Forms::Form
 	{
 	public:
-
-		
-		MyForm(void)
+		Vistas(void)
 		{
 			InitializeComponent();
 			//
@@ -35,33 +29,29 @@ namespace Proyecto_TDatabase {
 		}
 
 		String^ user;
-
-	public:
 		String^ pas;
-		bool si = false;
 		String^ acces;
-	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
 	public:
+
 		Form^ Opciones;
 
-
-		MyForm( Form^ opciones ,String^ a , String^ b)
+		Vistas(Form^ opciones, String^ users, String^ pass)
 		{
-			
+			user = users;
+			pas = pass;
 			Opciones = opciones;
-			user = a;
-			pas = b;
 
-			if (a->CompareTo("Admin-Mirian") == 0 && b->CompareTo("georgina") == 0)
+			if (users->CompareTo("Admin-Mirian") == 0 && pass->CompareTo("georgina") == 0)
 			{
 				acces = "";
 			}
-			else 
+			else
 			{
 				acces = "\"Admin-Mirian\".";
 			}
-
 			InitializeComponent();
+			
 		}
 
 
@@ -69,7 +59,7 @@ namespace Proyecto_TDatabase {
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
 		/// </summary>
-		~MyForm()
+		~Vistas()
 		{
 			if (components)
 			{
@@ -77,11 +67,11 @@ namespace Proyecto_TDatabase {
 			}
 		}
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	protected:
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
 	private: System::Windows::Forms::Button^ button1;
 
+	private: System::Windows::Forms::Button^ button2;
+	protected:
 
 	private:
 		/// <summary>
@@ -96,93 +86,86 @@ namespace Proyecto_TDatabase {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Vistas::typeid));
+
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(36, 141);
+			this->dataGridView1->Location = System::Drawing::Point(28, 193);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(666, 295);
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(593, 297);
 			this->dataGridView1->TabIndex = 0;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(204, 51);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label1->Location = System::Drawing::Point(199, 73);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(111, 16);
-			this->label1->TabIndex = 2;
-			this->label1->Text = L"Nombre de tabla:";
-			// 
-			// domainUpDown1
-			// 
-			this->domainUpDown1->Items->Add(L"Estudiante");
-			this->domainUpDown1->Items->Add(L"Departamentos");
-			this->domainUpDown1->Items->Add(L"Seccion");
-			this->domainUpDown1->Items->Add(L"Curso");
-			this->domainUpDown1->Items->Add(L"Aula");
-			this->domainUpDown1->Items->Add(L"Instructor");
-			this->domainUpDown1->Items->Add(L"Enseña");
-			this->domainUpDown1->Items->Add(L"Horario");
-			this->domainUpDown1->Location = System::Drawing::Point(338, 49);
-			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(223, 22);
-			this->domainUpDown1->TabIndex = 3;
-			this->domainUpDown1->SelectedItemChanged += gcnew System::EventHandler(this, &MyForm::domainUpDown1_SelectedItemChanged);
+			this->label1->Size = System::Drawing::Size(121, 20);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Nombre Vista: ";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(306, 95);
+			this->button1->Location = System::Drawing::Point(276, 136);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(130, 24);
-			this->button1->TabIndex = 4;
+			this->button1->Size = System::Drawing::Size(101, 31);
+			this->button1->TabIndex = 2;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &Vistas::button1_Click);
 			// 
-			// button3
+			// button2
 			// 
-			this->button3->Location = System::Drawing::Point(12, 12);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(151, 31);
-			this->button3->TabIndex = 6;
-			this->button3->Text = L"Regresar";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			this->button2->Location = System::Drawing::Point(12, 12);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(98, 31);
+			this->button2->TabIndex = 4;
+			this->button2->Text = L"Regresar";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Vistas::button2_Click);
 			// 
-			// MyForm
+			// domainUpDown1
+			// 
+			this->domainUpDown1->Items->Add(L"Estudiantes_Ingeneria");
+			this->domainUpDown1->Location = System::Drawing::Point(326, 74);
+			this->domainUpDown1->Name = L"domainUpDown1";
+			this->domainUpDown1->Size = System::Drawing::Size(151, 22);
+			this->domainUpDown1->TabIndex = 5;
+			this->domainUpDown1->SelectedItemChanged += gcnew System::EventHandler(this, &Vistas::domainUpDown1_SelectedItemChanged);
+			// 
+			// Vistas
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(757, 482);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button1);
+			this->ClientSize = System::Drawing::Size(652, 502);
 			this->Controls->Add(this->domainUpDown1);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
-			this->Name = L"MyForm";
+			this->Name = L"Vistas";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"MyForm";
+			this->Text = L"Vistas";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-		
 
-		
-
-		
 
 		void ConnectionDB()
 		{
@@ -193,7 +176,7 @@ namespace Proyecto_TDatabase {
 				CON->Open();
 				OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
-				
+
 				cmd->CommandText = "Select * from " + acces + domainUpDown1->Text;
 				cmd->ExecuteNonQuery();
 
@@ -218,23 +201,15 @@ namespace Proyecto_TDatabase {
 		}
 
 
-		
-
-
-
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		
 		ConnectionDB();
 	}
-
-
-
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Visible = false;
 	Opciones->Show();
+
+
+
 }
 private: System::Void domainUpDown1_SelectedItemChanged(System::Object^ sender, System::EventArgs^ e) {
 }

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "MyForm.h"
+#include "Opciones.h"
 
 namespace CppCLRWinFormsProject {
 
-	#include "MyForm.h";
+	#include "Opciones.h";
 	
 	
 	using namespace System;
@@ -33,6 +33,9 @@ namespace CppCLRWinFormsProject {
 			//TODO: Add the constructor code here
 			//
 		}
+
+		
+
 		System::Windows::Forms::TextBox^ textBox2;
 
 	public:
@@ -81,7 +84,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->button1->AccessibleName = L"";
 			this->button1->Cursor = System::Windows::Forms::Cursors::Default;
-			this->button1->Location = System::Drawing::Point(300, 385);
+			this->button1->Location = System::Drawing::Point(249, 375);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 0;
@@ -91,8 +94,9 @@ namespace CppCLRWinFormsProject {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(264, 270);
+			this->textBox1->Location = System::Drawing::Point(213, 260);
 			this->textBox1->Name = L"textBox1";
+			this->textBox1->PasswordChar = '*';
 			this->textBox1->Size = System::Drawing::Size(155, 22);
 			this->textBox1->TabIndex = 1;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Form1::textBox1_TextChanged);
@@ -100,7 +104,7 @@ namespace CppCLRWinFormsProject {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(299, 220);
+			this->label1->Location = System::Drawing::Point(248, 210);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(76, 16);
 			this->label1->TabIndex = 2;
@@ -110,7 +114,7 @@ namespace CppCLRWinFormsProject {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(312, 101);
+			this->label2->Location = System::Drawing::Point(261, 91);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(54, 16);
 			this->label2->TabIndex = 3;
@@ -118,23 +122,26 @@ namespace CppCLRWinFormsProject {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(264, 137);
+			this->textBox2->Location = System::Drawing::Point(213, 127);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(155, 22);
 			this->textBox2->TabIndex = 4;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &Form1::textBox2_TextChanged);
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(727, 501);
+			this->ClientSize = System::Drawing::Size(582, 453);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
 			this->Name = L"Form1";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Usuario";
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -153,19 +160,13 @@ namespace CppCLRWinFormsProject {
 				String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
 				OdbcConnection^ CON = gcnew OdbcConnection(connString);
 				CON->Open();
-				/*OdbcCommand^ cmd = CON->CreateCommand();
-				cmd->CommandType = CommandType::Text;
-				cmd->CommandText = "SELECT user_name, password FROM SYS.SYSUSERPERM";
-				cmd->ExecuteNonQuery();
-
-				DataTable^ dt = gcnew DataTable();
-				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
-				dp->Fill(dt);
 				
-				CON->Close();*/
+				CON->Close();
 
+
+				
 				this->Visible = false;
-				MyForm^ tt = gcnew MyForm(textBox2->Text, textBox1->Text);
+				Opciones^ tt = gcnew Opciones(this ,textBox2->Text, textBox1->Text);
 				tt->Show();
 
 				
@@ -186,30 +187,7 @@ namespace CppCLRWinFormsProject {
 
 		ConnectionDB();
 
-		
-		
 
-		
-
-		/*String^ Ic = this->textBox1->Text;
-
-		String^ connString = "Dsn=TBD1;uid=Admin-Mirian";
-		OdbcConnection^ CON = gcnew OdbcConnection("Dsn=TBD1;uid=Admin-Mirian");
-
-		try
-		{
-			CON->Open();
-			MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
-
-
-
-		}
-		catch (Exception^ ex)
-		{
-			MessageBox::Show(ex->Message, "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
-
-		}*/
-		
 
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -217,5 +195,10 @@ namespace CppCLRWinFormsProject {
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	
+
+private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
