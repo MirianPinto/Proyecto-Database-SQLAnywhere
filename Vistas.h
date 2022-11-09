@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CrearVista.h"
 namespace Proyecto_TDatabase {
 
 	using namespace System;
@@ -32,6 +32,7 @@ namespace Proyecto_TDatabase {
 		String^ pas;
 		String^ acces;
 	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
+	private: System::Windows::Forms::Button^ CV;
 	public:
 
 		Form^ Opciones;
@@ -86,14 +87,12 @@ namespace Proyecto_TDatabase {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Vistas::typeid));
-
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
+			this->CV = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -146,11 +145,22 @@ namespace Proyecto_TDatabase {
 			this->domainUpDown1->TabIndex = 5;
 			this->domainUpDown1->SelectedItemChanged += gcnew System::EventHandler(this, &Vistas::domainUpDown1_SelectedItemChanged);
 			// 
+			// CV
+			// 
+			this->CV->Location = System::Drawing::Point(514, 13);
+			this->CV->Name = L"CV";
+			this->CV->Size = System::Drawing::Size(100, 30);
+			this->CV->TabIndex = 6;
+			this->CV->Text = L"Crear Vista";
+			this->CV->UseVisualStyleBackColor = true;
+			this->CV->Click += gcnew System::EventHandler(this, &Vistas::CV_Click);
+			// 
 			// Vistas
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(652, 502);
+			this->Controls->Add(this->CV);
 			this->Controls->Add(this->domainUpDown1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -212,6 +222,13 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void domainUpDown1_SelectedItemChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void CV_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	this->Visible = false;
+	CrearVista^ cp = gcnew CrearVista(this, user, pas);
+	cp->Show();
 }
 };
 }

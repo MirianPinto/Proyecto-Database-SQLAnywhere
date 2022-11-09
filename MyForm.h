@@ -1,5 +1,7 @@
 #pragma once
 #include "CrearUsuarios.h"
+#include <iostream>
+#include "CrearTabla.h"
 
 
 namespace Proyecto_TDatabase {
@@ -41,6 +43,8 @@ namespace Proyecto_TDatabase {
 		bool si = false;
 		String^ acces;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button2;
+
 	public:
 		Form^ Opciones;
 
@@ -101,6 +105,7 @@ namespace Proyecto_TDatabase {
 			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -125,14 +130,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Items->Add(L"Estudiante");
-			this->domainUpDown1->Items->Add(L"Departamentos");
-			this->domainUpDown1->Items->Add(L"Seccion");
-			this->domainUpDown1->Items->Add(L"Curso");
-			this->domainUpDown1->Items->Add(L"Aula");
-			this->domainUpDown1->Items->Add(L"Instructor");
-			this->domainUpDown1->Items->Add(L"Enseña");
-			this->domainUpDown1->Items->Add(L"Horario");
+			this->domainUpDown1->Items->Add(L"");
 			this->domainUpDown1->Location = System::Drawing::Point(338, 49);
 			this->domainUpDown1->Name = L"domainUpDown1";
 			this->domainUpDown1->Size = System::Drawing::Size(223, 22);
@@ -159,11 +157,22 @@ namespace Proyecto_TDatabase {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(610, 12);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(118, 31);
+			this->button2->TabIndex = 7;
+			this->button2->Text = L"Crear Tabla";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(757, 482);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->domainUpDown1);
@@ -172,15 +181,64 @@ namespace Proyecto_TDatabase {
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
+
+			ConnectionDB1();
 
 		}
 #pragma endregion
 		
 
-		
+		void ConnectionDB1()
+		{
+			dataGridView1->Visible = false;
+
+			String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
+			OdbcConnection^ CON = gcnew OdbcConnection(connString);
+			try
+			{
+				CON->Open();
+				OdbcCommand^ cmd = CON->CreateCommand();
+				cmd->CommandType = CommandType::Text;
+
+				cmd->CommandText = "Select T.Table_Name From(SysObject as O join SysTab as T on O.Object_ID = T.Object_ID join SysColumn as C on C.Table_ID = T.Table_ID) " +
+					"join SysUser as U Where  U.User_Name = 'Admin-Mirian' Group by T.Table_Name";
+				cmd->ExecuteNonQuery();
+
+
+
+				DataTable^ dt = gcnew DataTable();
+				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
+				dp->Fill(dt);
+				dataGridView1->DataSource = dt;
+				
+
+				for each (DataGridViewRow^ row in dataGridView1->Rows)
+				{
+					if (row->Cells[0]->Value != nullptr) {
+						domainUpDown1->Items->Add(row->Cells[0]->Value->ToString());
+					}
+				}
+
+
+				CON->Close();
+				dataGridView1->Visible = true;
+				dataGridView1->DataSource = "";
+
+				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+
+
+
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message, "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				CON->Close();
+			}
+		}
 
 		
 
@@ -197,17 +255,18 @@ namespace Proyecto_TDatabase {
 				cmd->CommandText = "Select * from " + acces + domainUpDown1->Text;
 				cmd->ExecuteNonQuery();
 
+				
+
 				DataTable^ dt = gcnew DataTable();
 				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
 				dp->Fill(dt);
 				dataGridView1->DataSource = dt;
+				//String^ v = cmd->ExecuteScalar()->ToString();
+
+
 				CON->Close();
 
-
-
 				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
-
-
 
 			}
 			catch (Exception^ ex)
@@ -216,9 +275,6 @@ namespace Proyecto_TDatabase {
 				CON->Close();
 			}
 		}
-
-
-		
 
 
 
@@ -237,6 +293,16 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	Opciones->Show();
 }
 private: System::Void domainUpDown1_SelectedItemChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	CrearTabla^ CT = gcnew CrearTabla(this, user, pas);
+	CT->Show();
+
+}
+
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

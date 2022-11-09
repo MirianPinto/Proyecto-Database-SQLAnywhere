@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CrearFunciones.h"
 namespace Proyecto_TDatabase {
 
 	using namespace System;
@@ -30,6 +30,8 @@ namespace Proyecto_TDatabase {
 		String^ user;
 		String^ pas;
 		String^ acces;
+	private: System::Windows::Forms::Button^ CF;
+	public:
 
 		Form^ Opciones;
 
@@ -84,6 +86,7 @@ namespace Proyecto_TDatabase {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->CF = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -127,11 +130,22 @@ namespace Proyecto_TDatabase {
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Funciones";
 			// 
+			// CF
+			// 
+			this->CF->Location = System::Drawing::Point(403, 13);
+			this->CF->Name = L"CF";
+			this->CF->Size = System::Drawing::Size(130, 34);
+			this->CF->TabIndex = 4;
+			this->CF->Text = L"Crear Funcion";
+			this->CF->UseVisualStyleBackColor = true;
+			this->CF->Click += gcnew System::EventHandler(this, &Funciones::CF_Click);
+			// 
 			// Funciones
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(582, 467);
+			this->Controls->Add(this->CF);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -189,5 +203,13 @@ namespace Proyecto_TDatabase {
 		this->Visible = false;
 		Opciones->Show();
 	}
+private: System::Void CF_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	this->Visible = false;
+	CrearFunciones^ cp = gcnew CrearFunciones(this, user, pas);
+	cp->Show();
+
+}
 };
 }

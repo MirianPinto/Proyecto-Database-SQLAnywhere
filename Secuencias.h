@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CrearSecuencias.h"
 namespace Proyecto_TDatabase {
 
 	using namespace System;
@@ -29,6 +29,8 @@ namespace Proyecto_TDatabase {
 		String^ user;
 		String^ pas;
 		String^ acces;
+	private: System::Windows::Forms::Button^ CS;
+	public:
 
 		Form^ Opciones;
 
@@ -84,6 +86,7 @@ namespace Proyecto_TDatabase {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->CS = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -127,11 +130,22 @@ namespace Proyecto_TDatabase {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Secuencias::button2_Click);
 			// 
+			// CS
+			// 
+			this->CS->Location = System::Drawing::Point(445, 13);
+			this->CS->Name = L"CS";
+			this->CS->Size = System::Drawing::Size(134, 29);
+			this->CS->TabIndex = 4;
+			this->CS->Text = L"Crear Secuencia";
+			this->CS->UseVisualStyleBackColor = true;
+			this->CS->Click += gcnew System::EventHandler(this, &Secuencias::CS_Click);
+			// 
 			// Secuencias
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(591, 491);
+			this->Controls->Add(this->CS);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
@@ -191,5 +205,14 @@ namespace Proyecto_TDatabase {
 		Opciones->Show();
 
 	}
+private: System::Void CS_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	this->Visible = false;
+	CrearSecuencias^ cp = gcnew CrearSecuencias(this, user, pas);
+	cp->Show();
+
+
+}
 };
 }

@@ -133,7 +133,31 @@
     <ClInclude Include="Conexiones.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CrearDisparadores.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearFunciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearIndices.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearProcedimiento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearSecuencias.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearTabla.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearTablespace.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CrearUsuarios.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearVista.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Disparadores.h">
@@ -162,6 +186,9 @@
     <ClInclude Include="Secuencias.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SQL.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Tablespaces.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -177,7 +204,15 @@
     <ClCompile Include="Conexion.cpp" />
     <ClCompile Include="Conexiones.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
+    <ClCompile Include="CrearDisparadores.cpp" />
+    <ClCompile Include="CrearFunciones.cpp" />
+    <ClCompile Include="CrearIndices.cpp" />
+    <ClCompile Include="CrearProcedimiento.cpp" />
+    <ClCompile Include="CrearSecuencias.cpp" />
+    <ClCompile Include="CrearTabla.cpp" />
+    <ClCompile Include="CrearTablespace.cpp" />
     <ClCompile Include="CrearUsuarios.cpp" />
+    <ClCompile Include="CrearVista.cpp" />
     <ClCompile Include="Disparadores.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="Funciones.cpp" />
@@ -192,6 +227,7 @@
     </ClCompile>
     <ClCompile Include="Procedimientos.cpp" />
     <ClCompile Include="Secuencias.cpp" />
+    <ClCompile Include="SQL.cpp" />
     <ClCompile Include="Tablespaces.cpp" />
     <ClCompile Include="Usuarios.cpp" />
     <ClCompile Include="Vistas.cpp" />
@@ -210,8 +246,32 @@
     <EmbeddedResource Include="Conexiones.resx">
       <DependentUpon>Conexiones.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrearDisparadores.resx">
+      <DependentUpon>CrearDisparadores.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearFunciones.resx">
+      <DependentUpon>CrearFunciones.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearIndices.resx">
+      <DependentUpon>CrearIndices.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearProcedimiento.resx">
+      <DependentUpon>CrearProcedimiento.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearSecuencias.resx">
+      <DependentUpon>CrearSecuencias.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearTabla.resx">
+      <DependentUpon>CrearTabla.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearTablespace.resx">
+      <DependentUpon>CrearTablespace.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearUsuarios.resx">
       <DependentUpon>CrearUsuarios.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearVista.resx">
+      <DependentUpon>CrearVista.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Disparadores.resx">
       <DependentUpon>Disparadores.h</DependentUpon>
@@ -236,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Secuencias.resx">
       <DependentUpon>Secuencias.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQL.resx">
+      <DependentUpon>SQL.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tablespaces.resx">
       <DependentUpon>Tablespaces.h</DependentUpon>

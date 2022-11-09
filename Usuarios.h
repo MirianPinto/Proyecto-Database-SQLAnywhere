@@ -117,6 +117,7 @@ namespace Proyecto_TDatabase {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(494, 271);
 			this->dataGridView1->TabIndex = 1;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Usuarios::dataGridView1_CellContentClick);
 			// 
 			// button2
 			// 
@@ -219,6 +220,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	CrearUsuarios^ cc = gcnew CrearUsuarios(this);
 	cc->Show();
 
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };
 }

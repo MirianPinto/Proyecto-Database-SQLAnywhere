@@ -8,6 +8,7 @@
 #include "Funciones.h"
 #include "Tablespaces.h"
 #include "Secuencias.h"
+#include "SQL.h"
 
 namespace Proyecto_TDatabase {
 
@@ -26,6 +27,8 @@ namespace Proyecto_TDatabase {
 	public:
 		String^ pass;
 		String^ users;
+	private: System::Windows::Forms::Button^ button13;
+	public:
 		Form^ Form1;
 
 		Opciones(void)
@@ -97,6 +100,7 @@ namespace Proyecto_TDatabase {
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->button13 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -227,11 +231,22 @@ namespace Proyecto_TDatabase {
 			this->button12->UseVisualStyleBackColor = true;
 			this->button12->Click += gcnew System::EventHandler(this, &Opciones::button12_Click);
 			// 
+			// button13
+			// 
+			this->button13->Location = System::Drawing::Point(174, 382);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(134, 35);
+			this->button13->TabIndex = 13;
+			this->button13->Text = L"SQL";
+			this->button13->UseVisualStyleBackColor = true;
+			this->button13->Click += gcnew System::EventHandler(this, &Opciones::button13_Click);
+			// 
 			// Opciones
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(648, 445);
+			this->ClientSize = System::Drawing::Size(655, 475);
+			this->Controls->Add(this->button13);
 			this->Controls->Add(this->button12);
 			this->Controls->Add(this->button11);
 			this->Controls->Add(this->button10);
@@ -319,6 +334,14 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	this->Visible = false;
 	Secuencias^ obj = gcnew Secuencias(this, users, pass);
 	obj->Show();
+
+}
+private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	SQL^ obj = gcnew SQL(this, users, pass);
+	obj->Show();
+
 
 }
 };

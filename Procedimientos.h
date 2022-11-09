@@ -1,4 +1,5 @@
 #pragma once
+#include "CrearProcedimiento.h"
 
 namespace Proyecto_TDatabase {
 
@@ -28,12 +29,14 @@ namespace Proyecto_TDatabase {
 			//
 		}
 
+		
+	private: System::Windows::Forms::Button^ CP;
+	public:
+
+		Form^ Opciones;
 		String^ user;
 		String^ pas;
 		String^ acces;
-
-		Form^ Opciones;
-
 		Procedimientos(Form^ opciones, String^ users, String^ pass)
 		{
 			user = users;
@@ -86,6 +89,7 @@ namespace Proyecto_TDatabase {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->CP = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -129,11 +133,22 @@ namespace Proyecto_TDatabase {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Procedimientos::button2_Click);
 			// 
+			// CP
+			// 
+			this->CP->Location = System::Drawing::Point(407, 12);
+			this->CP->Name = L"CP";
+			this->CP->Size = System::Drawing::Size(150, 29);
+			this->CP->TabIndex = 5;
+			this->CP->Text = L"Crear Procedimiento";
+			this->CP->UseVisualStyleBackColor = true;
+			this->CP->Click += gcnew System::EventHandler(this, &Procedimientos::CP_Click);
+			// 
 			// Procedimientos
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(569, 453);
+			this->Controls->Add(this->CP);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
@@ -195,6 +210,14 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void Procedimientos_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void CP_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	CrearProcedimiento^ cp = gcnew CrearProcedimiento();
+	cp->Show();
+
+
 }
 };
 }

@@ -29,6 +29,14 @@ namespace Proyecto_TDatabase {
 			//TODO: agregar código de constructor aquí
 			//
 		}
+
+		CrearUsuarios(Form^ Uusaros)
+		{
+			usuarios = Uusaros;
+
+			InitializeComponent();
+		}
+
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
@@ -39,14 +47,12 @@ namespace Proyecto_TDatabase {
 		Form^ usuarios;
 		String^ leer;
 		String^ editar;
-		String^ eliminar;
+	private: System::Windows::Forms::Label^ label4;
+	public:
+	private: System::Windows::Forms::TextBox^ textBox3;
+		   String^ eliminar;
 
-		CrearUsuarios(Form^ Uusaros)
-		{
-			usuarios = Uusaros;
-
-			InitializeComponent();
-		}
+		
 
 	protected:
 		/// <summary>
@@ -89,11 +95,13 @@ namespace Proyecto_TDatabase {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(219, 294);
+			this->button1->Location = System::Drawing::Point(262, 300);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(125, 40);
 			this->button1->TabIndex = 0;
@@ -104,7 +112,7 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(73, 95);
+			this->label1->Location = System::Drawing::Point(44, 91);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(122, 16);
 			this->label1->TabIndex = 1;
@@ -113,7 +121,7 @@ namespace Proyecto_TDatabase {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(90, 183);
+			this->label2->Location = System::Drawing::Point(259, 91);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(76, 16);
 			this->label2->TabIndex = 2;
@@ -121,14 +129,14 @@ namespace Proyecto_TDatabase {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(56, 132);
+			this->textBox1->Location = System::Drawing::Point(33, 119);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(150, 22);
 			this->textBox1->TabIndex = 3;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(56, 220);
+			this->textBox2->Location = System::Drawing::Point(231, 119);
 			this->textBox2->MaxLength = 8;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(150, 22);
@@ -147,7 +155,7 @@ namespace Proyecto_TDatabase {
 			// button3
 			// 
 			this->button3->Enabled = false;
-			this->button3->Location = System::Drawing::Point(302, 132);
+			this->button3->Location = System::Drawing::Point(33, 209);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(100, 38);
 			this->button3->TabIndex = 6;
@@ -158,7 +166,7 @@ namespace Proyecto_TDatabase {
 			// button4
 			// 
 			this->button4->Enabled = false;
-			this->button4->Location = System::Drawing::Point(447, 134);
+			this->button4->Location = System::Drawing::Point(328, 211);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(100, 36);
 			this->button4->TabIndex = 7;
@@ -169,7 +177,7 @@ namespace Proyecto_TDatabase {
 			// button5
 			// 
 			this->button5->Enabled = false;
-			this->button5->Location = System::Drawing::Point(369, 204);
+			this->button5->Location = System::Drawing::Point(178, 209);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(100, 38);
 			this->button5->TabIndex = 8;
@@ -181,17 +189,36 @@ namespace Proyecto_TDatabase {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->label3->Location = System::Drawing::Point(383, 91);
+			this->label3->Location = System::Drawing::Point(43, 166);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(86, 20);
 			this->label3->TabIndex = 9;
 			this->label3->Text = L"Privilegios";
 			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(483, 91);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(148, 16);
+			this->label4->TabIndex = 10;
+			this->label4->Text = L"Nombre de la Conexion";
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(472, 119);
+			this->textBox3->Multiline = true;
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(150, 22);
+			this->textBox3->TabIndex = 11;
+			// 
 			// CrearUsuarios
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(582, 385);
+			this->ClientSize = System::Drawing::Size(653, 407);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);

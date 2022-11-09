@@ -1,4 +1,5 @@
 #pragma once
+#include "CrearDisparadores.h"
 
 namespace Proyecto_TDatabase {
 
@@ -31,6 +32,8 @@ namespace Proyecto_TDatabase {
 		String^ user;
 		String^ pas;
 		String^ acces;
+	private: System::Windows::Forms::Button^ CD;
+	public:
 
 		Form^ Opciones;
 
@@ -87,6 +90,7 @@ namespace Proyecto_TDatabase {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->CD = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -130,11 +134,22 @@ namespace Proyecto_TDatabase {
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Disparadores";
 			// 
+			// CD
+			// 
+			this->CD->Location = System::Drawing::Point(455, 13);
+			this->CD->Name = L"CD";
+			this->CD->Size = System::Drawing::Size(132, 35);
+			this->CD->TabIndex = 4;
+			this->CD->Text = L"Crear Disparador";
+			this->CD->UseVisualStyleBackColor = true;
+			this->CD->Click += gcnew System::EventHandler(this, &Disparadores::CD_Click);
+			// 
 			// Disparadores
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(619, 512);
+			this->Controls->Add(this->CD);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
@@ -194,5 +209,13 @@ namespace Proyecto_TDatabase {
 
 
 	}
+private: System::Void CD_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	CrearDisparadores^ cp = gcnew CrearDisparadores(this, user, pas);
+	cp->Show();
+
+
+}
 };
 }
