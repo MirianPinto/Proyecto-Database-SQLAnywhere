@@ -1,6 +1,7 @@
 #pragma once
 #include "CrearFunciones.h"
 #include "EliminarFuncion.h"
+#include "DDLFunciones.h"
 
 namespace Proyecto_TDatabase {
 
@@ -34,6 +35,8 @@ namespace Proyecto_TDatabase {
 		String^ acces;
 	private: System::Windows::Forms::Button^ CF;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
 	public:
 
 		Form^ Opciones;
@@ -91,6 +94,8 @@ namespace Proyecto_TDatabase {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->CF = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -146,7 +151,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(403, 54);
+			this->button3->Location = System::Drawing::Point(403, 65);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(130, 42);
 			this->button3->TabIndex = 5;
@@ -154,11 +159,32 @@ namespace Proyecto_TDatabase {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Funciones::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(403, 127);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(130, 37);
+			this->button4->TabIndex = 6;
+			this->button4->Text = L"Modificar funcion";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(13, 87);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(106, 37);
+			this->button5->TabIndex = 7;
+			this->button5->Text = L"DDL";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Funciones::button5_Click);
+			// 
 			// Funciones
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(582, 467);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->CF);
 			this->Controls->Add(this->label1);
@@ -231,6 +257,13 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	
 		this->Visible = false;
 		EliminarFuncion^ cp = gcnew EliminarFuncion(this, user, pas);
+	cp->Show();
+
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	DDLFunciones^ cp = gcnew DDLFunciones(this, user, pas);
 	cp->Show();
 
 }

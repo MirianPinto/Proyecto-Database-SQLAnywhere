@@ -187,15 +187,24 @@ namespace Proyecto_TDatabase {
 
 				cmd->CommandText = Sentencia->Text;
 				cmd->ExecuteNonQuery();
-				DataTable^ dt = gcnew DataTable();
-				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
-				dp->Fill(dt);
-				dataGridView1->DataSource = dt;
+
+				if(Sentencia->Text->Contains("CREATE"))
+				{
+
+				}
+				else
+				{
+					DataTable^ dt = gcnew DataTable();
+					OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
+					dp->Fill(dt);
+					dataGridView1->DataSource = dt;
+				}
+				
 				CON->Close();
 
 				//CON->Close();
-
-				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show("Consulta hecha", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				
 
 			}
 			catch (Exception^ ex)

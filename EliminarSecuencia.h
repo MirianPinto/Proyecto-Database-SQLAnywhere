@@ -146,6 +146,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"EliminarSecuencia";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"EliminarSecuencia";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

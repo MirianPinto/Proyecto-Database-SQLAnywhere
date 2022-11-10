@@ -2,6 +2,7 @@
 #include "CrearUsuarios.h"
 #include "ModificarUsuario.h"
 #include "EliminarUsuario.h"
+#include "DDLUsuarios.h"
 
 namespace Proyecto_TDatabase {
 
@@ -39,7 +40,8 @@ namespace Proyecto_TDatabase {
 	private: System::Windows::Forms::Button^ button4;
 	public:
 	private: System::Windows::Forms::Button^ button5;
-
+	private: System::Windows::Forms::Button^ button6;
+	public:
 		Form^ Opciones;
 
 		Usuarios(Form^ opciones, String^ users, String^ pass)
@@ -104,6 +106,7 @@ namespace Proyecto_TDatabase {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -181,11 +184,22 @@ namespace Proyecto_TDatabase {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &Usuarios::button5_Click);
 			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(13, 98);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(123, 32);
+			this->button6->TabIndex = 7;
+			this->button6->Text = L"DDL";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Usuarios::button6_Click);
+			// 
 			// Usuarios
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(618, 456);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->label1);
@@ -271,6 +285,14 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	ModificarUsuario^ cc = gcnew ModificarUsuario(this);
 	cc->Show();
 
+
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	this->Visible = false;
+	DDLUsuarios^ cc = gcnew DDLUsuarios(this);
+	cc->Show();
 
 }
 };

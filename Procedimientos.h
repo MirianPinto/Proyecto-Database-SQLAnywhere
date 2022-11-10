@@ -1,6 +1,7 @@
 #pragma once
 #include "CrearProcedimiento.h"
 #include "EliminarProcedimiento.h"
+#include "DDLProcedi.h"
 
 namespace Proyecto_TDatabase {
 
@@ -38,6 +39,8 @@ namespace Proyecto_TDatabase {
 		String^ user;
 		String^ pas;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
 	public:
 		String^ acces;
 		Procedimientos(Form^ opciones, String^ users, String^ pass)
@@ -94,6 +97,8 @@ namespace Proyecto_TDatabase {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->CP = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -157,11 +162,32 @@ namespace Proyecto_TDatabase {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Procedimientos::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(13, 109);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(98, 43);
+			this->button4->TabIndex = 7;
+			this->button4->Text = L"DDL";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Procedimientos::button4_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(407, 127);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(150, 50);
+			this->button5->TabIndex = 8;
+			this->button5->Text = L"Modificar Procedimiento";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
 			// Procedimientos
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(569, 453);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->CP);
 			this->Controls->Add(this->button2);
@@ -240,6 +266,14 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		this->Visible = false;
 		EliminarProcedimiento^ cp = gcnew EliminarProcedimiento(this, user, pas);
 	cp->Show();
+
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	DDLProcedi^ cp = gcnew DDLProcedi(this, user, pas);
+	cp->Show();
+	
 
 }
 };

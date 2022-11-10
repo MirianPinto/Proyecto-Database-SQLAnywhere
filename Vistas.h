@@ -1,6 +1,7 @@
 #pragma once
 #include "CrearVista.h"
 #include "ModificarVista.h"
+#include "DDLVistas.h"
 
 namespace Proyecto_TDatabase {
 
@@ -37,6 +38,7 @@ namespace Proyecto_TDatabase {
 	private: System::Windows::Forms::Button^ CV;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button6;
 	public:
 
 		Form^ Opciones;
@@ -56,6 +58,7 @@ namespace Proyecto_TDatabase {
 				acces = "\"Admin-Mirian\".";
 			}
 			InitializeComponent();
+			Vistas1();
 			
 		}
 
@@ -99,6 +102,7 @@ namespace Proyecto_TDatabase {
 			this->CV = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -180,11 +184,22 @@ namespace Proyecto_TDatabase {
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &Vistas::button4_Click);
 			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(12, 126);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(150, 36);
+			this->button6->TabIndex = 11;
+			this->button6->Text = L"DDL";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Vistas::button6_Click);
+			// 
 			// Vistas
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(652, 502);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->CV);
@@ -346,6 +361,9 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	EliminarVista(codigoELiminar1);
 
+	domainUpDown1->Items->Clear();
+	Vistas1();
+
 
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -353,6 +371,13 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	this->Visible = false;
 	ModificarVista^ cp = gcnew ModificarVista(this, user, pas);
 	cp->Show();
+
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	DDLVistas^ CT = gcnew DDLVistas(this, user, pas);
+	CT->Show();
 
 }
 };

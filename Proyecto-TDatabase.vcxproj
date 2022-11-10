@@ -160,6 +160,33 @@
     <ClInclude Include="CrearVista.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="DDLdbspaces.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DDLDisparador.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DDLFunciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DDLIndices.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DDLProcedi.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DDLSecuencias.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DDLTABLAS.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DDLUsuarios.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DDLVistas.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Disparadores.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -243,6 +270,15 @@
     <ClCompile Include="CrearTablespace.cpp" />
     <ClCompile Include="CrearUsuarios.cpp" />
     <ClCompile Include="CrearVista.cpp" />
+    <ClCompile Include="DDLdbspaces.cpp" />
+    <ClCompile Include="DDLDisparador.cpp" />
+    <ClCompile Include="DDLFunciones.cpp" />
+    <ClCompile Include="DDLIndices.cpp" />
+    <ClCompile Include="DDLProcedi.cpp" />
+    <ClCompile Include="DDLSecuencias.cpp" />
+    <ClCompile Include="DDLTABLAS.cpp" />
+    <ClCompile Include="DDLUsuarios.cpp" />
+    <ClCompile Include="DDLVistas.cpp" />
     <ClCompile Include="Disparadores.cpp" />
     <ClCompile Include="EliminarDisparador.cpp" />
     <ClCompile Include="EliminarFuncion.cpp" />
@@ -312,6 +348,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearVista.resx">
       <DependentUpon>CrearVista.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDLdbspaces.resx">
+      <DependentUpon>DDLdbspaces.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDLDisparador.resx">
+      <DependentUpon>DDLDisparador.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDLFunciones.resx">
+      <DependentUpon>DDLFunciones.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDLIndices.resx">
+      <DependentUpon>DDLIndices.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDLProcedi.resx">
+      <DependentUpon>DDLProcedi.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDLSecuencias.resx">
+      <DependentUpon>DDLSecuencias.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDLTABLAS.resx">
+      <DependentUpon>DDLTABLAS.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDLUsuarios.resx">
+      <DependentUpon>DDLUsuarios.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DDLVistas.resx">
+      <DependentUpon>DDLVistas.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Disparadores.resx">
       <DependentUpon>Disparadores.h</DependentUpon>

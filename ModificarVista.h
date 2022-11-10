@@ -10,6 +10,8 @@ namespace Proyecto_TDatabase {
 	using namespace System::Drawing;
 
 
+	using namespace System::Data::Odbc;
+	using namespace Proyecto_TDatabase;
 
 	/// <summary>
 	/// Resumen de ModificarVista

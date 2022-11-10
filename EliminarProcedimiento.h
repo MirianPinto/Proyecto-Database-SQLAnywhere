@@ -148,6 +148,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->domainUpDown1);
 			this->Name = L"EliminarProcedimiento";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"EliminarProcedimiento";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

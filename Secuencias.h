@@ -1,6 +1,7 @@
 #pragma once
 #include "CrearSecuencias.h"
 #include "EliminarSecuencia.h"
+#include "DDLSecuencias.h"
 
 namespace Proyecto_TDatabase {
 
@@ -33,6 +34,8 @@ namespace Proyecto_TDatabase {
 		String^ acces;
 	private: System::Windows::Forms::Button^ CS;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
 	public:
 
 		Form^ Opciones;
@@ -91,6 +94,8 @@ namespace Proyecto_TDatabase {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->CS = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -154,11 +159,32 @@ namespace Proyecto_TDatabase {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Secuencias::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(22, 109);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->TabIndex = 6;
+			this->button4->Text = L"DDL";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Secuencias::button4_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(445, 118);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(134, 44);
+			this->button5->TabIndex = 7;
+			this->button5->Text = L"Modificar secuencia";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
 			// Secuencias
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(591, 491);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->CS);
 			this->Controls->Add(this->button2);
@@ -236,6 +262,12 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	cp->Show();
 	
 
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Visible = false;
+	DDLSecuencias^ cp = gcnew DDLSecuencias(this, user, pas);
+	cp->Show();
+	
 }
 };
 }

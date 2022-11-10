@@ -457,8 +457,8 @@ namespace Proyecto_TDatabase {
 
 
 				CON->Close();
-				dataGridView1->Visible = true;
-				dataGridView1->DataSource = "";
+				//dataGridView1->Visible = true;
+				//dataGridView1->DataSource = "";
 
 				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 

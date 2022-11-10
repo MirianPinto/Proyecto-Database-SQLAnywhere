@@ -102,7 +102,7 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(253, 161);
+			this->label1->Location = System::Drawing::Point(237, 164);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(56, 16);
 			this->label1->TabIndex = 1;
@@ -110,7 +110,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// Name
 			// 
-			this->Name->Location = System::Drawing::Point(211, 197);
+			this->Name->Location = System::Drawing::Point(198, 199);
 			this->Name->Name = L"Name";
 			this->Name->Size = System::Drawing::Size(145, 22);
 			this->Name->TabIndex = 2;
@@ -134,7 +134,8 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->Name);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Regresar);
-			//this->Name = L"CrearTablespace";
+//			this->Name = L"CrearTablespace";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CrearTablespace";
 			this->ResumeLayout(false);
 			this->PerformLayout();

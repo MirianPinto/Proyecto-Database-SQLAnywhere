@@ -71,7 +71,7 @@ namespace Proyecto_TDatabase {
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::Button^ button9;
 	private: System::Windows::Forms::Button^ button10;
-	private: System::Windows::Forms::Button^ button11;
+
 	private: System::Windows::Forms::Button^ button12;
 
 	private:
@@ -98,7 +98,6 @@ namespace Proyecto_TDatabase {
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->button13 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
@@ -212,15 +211,6 @@ namespace Proyecto_TDatabase {
 			this->button10->UseVisualStyleBackColor = true;
 			this->button10->Click += gcnew System::EventHandler(this, &Opciones::button10_Click);
 			// 
-			// button11
-			// 
-			this->button11->Location = System::Drawing::Point(510, 13);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(126, 36);
-			this->button11->TabIndex = 11;
-			this->button11->Text = L"Perfil";
-			this->button11->UseVisualStyleBackColor = true;
-			// 
 			// button12
 			// 
 			this->button12->Location = System::Drawing::Point(13, 13);
@@ -248,7 +238,6 @@ namespace Proyecto_TDatabase {
 			this->ClientSize = System::Drawing::Size(655, 475);
 			this->Controls->Add(this->button13);
 			this->Controls->Add(this->button12);
-			this->Controls->Add(this->button11);
 			this->Controls->Add(this->button10);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->button8);

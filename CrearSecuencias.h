@@ -236,6 +236,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->NS);
 			this->Controls->Add(this->Regresar);
 			this->Name = L"CrearSecuencias";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CrearSecuencias";
 			this->Load += gcnew System::EventHandler(this, &CrearSecuencias::CrearSecuencias_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->INCRE))->EndInit();

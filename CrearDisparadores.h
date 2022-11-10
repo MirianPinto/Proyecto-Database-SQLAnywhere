@@ -284,12 +284,11 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Regresar);
 			this->Name = L"CrearDisparadores";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"CrearDisparadores";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
-			Tablas1();
 
 		}
 #pragma endregion

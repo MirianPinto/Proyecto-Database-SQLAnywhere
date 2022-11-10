@@ -122,6 +122,33 @@
     <ClInclude Include="ModificarUsuario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DDLTABLAS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDLVistas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDLDisparador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDLProcedi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDLFunciones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDLSecuencias.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDLIndices.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDLUsuarios.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDLdbspaces.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -230,6 +257,33 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ModificarUsuario.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDLTABLAS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDLVistas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDLDisparador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDLProcedi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDLFunciones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDLSecuencias.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDLIndices.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDLUsuarios.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDLdbspaces.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

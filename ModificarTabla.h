@@ -625,6 +625,9 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 		NN->Enabled = false;
 		Origen->Enabled = false;
+
+		Renombrar->Enabled = false;
+		Agregar->Enabled = false;
 	}
 
 
@@ -673,7 +676,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		}
 
 	}
-	else if (Eliminar->Enabled) 
+	
+	if (Eliminar->Enabled) 
 	{
 		if (Objeto->Text->CompareTo("Llave Primaria") == 0)
 		{
@@ -689,11 +693,12 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		}
 		else
 		{
-			Accion_Ocurrir = "ALTER TABLE " + Tablas->Text + " ADD " + NN->Text;
+			Accion_Ocurrir = "ALTER TABLE " + Tablas->Text + " DROP " + Columnas->Text;
 			
 		}
 	}
-	else if (Renombrar->Enabled) 
+	
+	if (Renombrar->Enabled) 
 	{
 		if (Objeto->Text->CompareTo("Tabla") == 0) {
 			Accion_Ocurrir = "ALTER TABLE " + Tablas->Text + " RENAME " + Tablas->Text + " TO " + NN->Text;
@@ -706,6 +711,17 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 
 	sql(Accion_Ocurrir);
+
+
+	Columnas->Enabled = false;
+
+	NN->Enabled = false;
+	Origen->Enabled = false;
+
+
+	Renombrar->Enabled = true;
+	Agregar->Enabled = true;
+	Eliminar->Enabled = true;
 
 }
 };

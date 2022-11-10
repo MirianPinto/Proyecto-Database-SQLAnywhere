@@ -337,6 +337,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Regresar);
 			this->Name = L"CrearProcedimiento";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CrearProcedimiento";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->size))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->scala))->EndInit();

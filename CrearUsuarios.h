@@ -47,9 +47,9 @@ namespace Proyecto_TDatabase {
 		Form^ usuarios;
 		String^ leer;
 		String^ editar;
-	private: System::Windows::Forms::Label^ label4;
+
 	public:
-	private: System::Windows::Forms::TextBox^ textBox3;
+
 		   String^ eliminar;
 
 		
@@ -95,8 +95,6 @@ namespace Proyecto_TDatabase {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -195,30 +193,11 @@ namespace Proyecto_TDatabase {
 			this->label3->TabIndex = 9;
 			this->label3->Text = L"Privilegios";
 			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(483, 91);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(148, 16);
-			this->label4->TabIndex = 10;
-			this->label4->Text = L"Nombre de la Conexion";
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(472, 119);
-			this->textBox3->Multiline = true;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(150, 22);
-			this->textBox3->TabIndex = 11;
-			// 
 			// CrearUsuarios
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(653, 407);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);

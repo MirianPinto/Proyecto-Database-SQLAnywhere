@@ -164,6 +164,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->textNV);
 			this->Controls->Add(this->Regresar);
 			this->Name = L"CrearVista";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CrearVista";
 			this->ResumeLayout(false);
 			this->PerformLayout();

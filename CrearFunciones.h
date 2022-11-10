@@ -383,6 +383,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->Crear);
 			this->Controls->Add(this->Regresar);
 			this->Name = L"CrearFunciones";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CrearFunciones";
 			this->Load += gcnew System::EventHandler(this, &CrearFunciones::CrearFunciones_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->size1))->EndInit();
