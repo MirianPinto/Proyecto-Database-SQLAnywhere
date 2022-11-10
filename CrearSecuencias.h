@@ -29,14 +29,20 @@ namespace Proyecto_TDatabase {
 		}
 
 		Form^ Opciones;
+
+		String^ CodigoCreate="";
 		String^ user;
 	private: System::Windows::Forms::Label^ label1;
 	public:
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
+	private: System::Windows::Forms::NumericUpDown^ MAXV;
+
+	private: System::Windows::Forms::NumericUpDown^ mV;
+
+	private: System::Windows::Forms::NumericUpDown^ INICO;
+
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Button^ Crear;
 		   String^ pas;
 	public:
 		CrearSecuencias(Form^ opciones, String^ users, String^ pass)
@@ -58,10 +64,12 @@ namespace Proyecto_TDatabase {
 
 
 	private: System::Windows::Forms::Label^ NS;
+	private: System::Windows::Forms::TextBox^ TEXTNS;
 	public:
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Label^ Inc;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+	private: System::Windows::Forms::NumericUpDown^ INCRE;
+
 		   String^ acces;
 		
 
@@ -94,19 +102,20 @@ namespace Proyecto_TDatabase {
 		{
 			this->Regresar = (gcnew System::Windows::Forms::Button());
 			this->NS = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->TEXTNS = (gcnew System::Windows::Forms::TextBox());
 			this->Inc = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->INCRE = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->MAXV = (gcnew System::Windows::Forms::NumericUpDown());
+			this->mV = (gcnew System::Windows::Forms::NumericUpDown());
+			this->INICO = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
+			this->Crear = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->INCRE))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MAXV))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->mV))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->INICO))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Regresar
@@ -122,39 +131,39 @@ namespace Proyecto_TDatabase {
 			// NS
 			// 
 			this->NS->AutoSize = true;
-			this->NS->Location = System::Drawing::Point(70, 125);
+			this->NS->Location = System::Drawing::Point(73, 124);
 			this->NS->Name = L"NS";
 			this->NS->Size = System::Drawing::Size(56, 16);
 			this->NS->TabIndex = 1;
 			this->NS->Text = L"Nombre";
 			// 
-			// textBox1
+			// TEXTNS
 			// 
-			this->textBox1->Location = System::Drawing::Point(73, 159);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 22);
-			this->textBox1->TabIndex = 2;
+			this->TEXTNS->Location = System::Drawing::Point(73, 159);
+			this->TEXTNS->Name = L"TEXTNS";
+			this->TEXTNS->Size = System::Drawing::Size(100, 22);
+			this->TEXTNS->TabIndex = 2;
 			// 
 			// Inc
 			// 
 			this->Inc->AutoSize = true;
-			this->Inc->Location = System::Drawing::Point(73, 218);
+			this->Inc->Location = System::Drawing::Point(401, 124);
 			this->Inc->Name = L"Inc";
 			this->Inc->Size = System::Drawing::Size(94, 16);
 			this->Inc->TabIndex = 3;
 			this->Inc->Text = L"Incremento en:";
 			// 
-			// numericUpDown1
+			// INCRE
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(73, 250);
-			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(120, 22);
-			this->numericUpDown1->TabIndex = 4;
+			this->INCRE->Location = System::Drawing::Point(401, 156);
+			this->INCRE->Name = L"INCRE";
+			this->INCRE->Size = System::Drawing::Size(120, 22);
+			this->INCRE->TabIndex = 4;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(232, 124);
+			this->label1->Location = System::Drawing::Point(157, 224);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(86, 16);
 			this->label1->TabIndex = 5;
@@ -163,65 +172,76 @@ namespace Proyecto_TDatabase {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(235, 217);
+			this->label2->Location = System::Drawing::Point(323, 224);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(90, 16);
 			this->label2->TabIndex = 6;
 			this->label2->Text = L"Maximo valor:";
 			// 
-			// numericUpDown2
+			// MAXV
 			// 
-			this->numericUpDown2->Location = System::Drawing::Point(235, 158);
-			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(120, 22);
-			this->numericUpDown2->TabIndex = 7;
+			this->MAXV->Location = System::Drawing::Point(326, 253);
+			this->MAXV->Name = L"MAXV";
+			this->MAXV->Size = System::Drawing::Size(120, 22);
+			this->MAXV->TabIndex = 7;
 			// 
-			// numericUpDown3
+			// mV
 			// 
-			this->numericUpDown3->Location = System::Drawing::Point(238, 250);
-			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(120, 22);
-			this->numericUpDown3->TabIndex = 8;
+			this->mV->Location = System::Drawing::Point(160, 253);
+			this->mV->Name = L"mV";
+			this->mV->Size = System::Drawing::Size(120, 22);
+			this->mV->TabIndex = 8;
 			// 
-			// numericUpDown4
+			// INICO
 			// 
-			this->numericUpDown4->Location = System::Drawing::Point(414, 158);
-			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(120, 22);
-			this->numericUpDown4->TabIndex = 9;
+			this->INICO->Location = System::Drawing::Point(239, 160);
+			this->INICO->Name = L"INICO";
+			this->INICO->Size = System::Drawing::Size(120, 22);
+			this->INICO->TabIndex = 9;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(414, 124);
+			this->label3->Location = System::Drawing::Point(249, 124);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(92, 16);
 			this->label3->TabIndex = 10;
 			this->label3->Text = L"Valor de inicio";
+			// 
+			// Crear
+			// 
+			this->Crear->Location = System::Drawing::Point(266, 379);
+			this->Crear->Name = L"Crear";
+			this->Crear->Size = System::Drawing::Size(137, 52);
+			this->Crear->TabIndex = 11;
+			this->Crear->Text = L"Crear";
+			this->Crear->UseVisualStyleBackColor = true;
+			this->Crear->Click += gcnew System::EventHandler(this, &CrearSecuencias::Crear_Click);
 			// 
 			// CrearSecuencias
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(712, 506);
+			this->Controls->Add(this->Crear);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->numericUpDown4);
-			this->Controls->Add(this->numericUpDown3);
-			this->Controls->Add(this->numericUpDown2);
+			this->Controls->Add(this->INICO);
+			this->Controls->Add(this->mV);
+			this->Controls->Add(this->MAXV);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->numericUpDown1);
+			this->Controls->Add(this->INCRE);
 			this->Controls->Add(this->Inc);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->TEXTNS);
 			this->Controls->Add(this->NS);
 			this->Controls->Add(this->Regresar);
 			this->Name = L"CrearSecuencias";
 			this->Text = L"CrearSecuencias";
 			this->Load += gcnew System::EventHandler(this, &CrearSecuencias::CrearSecuencias_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->INCRE))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->MAXV))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->mV))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->INICO))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -238,18 +258,18 @@ namespace Proyecto_TDatabase {
 				OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
 
-				cmd->CommandText = "select proc_name from sys.SYSPROCEDURE WHERE proc_defn like 'create procedure%' and creator = 1";
+				cmd->CommandText = CodigoCreate;
 				cmd->ExecuteNonQuery();
 
-				DataTable^ dt = gcnew DataTable();
+				/*DataTable^ dt = gcnew DataTable();
 				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
-				dp->Fill(dt);
+				dp->Fill(dt);*/
 				//dataGridView1->DataSource = dt;
 				CON->Close();
 
 
 
-				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show("La secuencia ha sido creada correctamente", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 
 
@@ -269,5 +289,17 @@ namespace Proyecto_TDatabase {
 	}
 	private: System::Void CrearSecuencias_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void Crear_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	CodigoCreate = "CREATE SEQUENCE " + TEXTNS->Text + " START WITH " + INICO->Text + " INCREMENT BY " + INCRE->Text + " MINVALUE " + mV->Text + " MAXVALUE " + MAXV->Text + " CYCLE;";
+
+
+	ConnectionDB();
+
+	TEXTNS->Text = "";
+	
+
+}
 };
 }

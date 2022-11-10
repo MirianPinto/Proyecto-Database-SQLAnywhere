@@ -127,7 +127,7 @@ namespace Proyecto_TDatabase {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(107, 324);
+			this->dataGridView1->Location = System::Drawing::Point(110, 309);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
@@ -137,7 +137,7 @@ namespace Proyecto_TDatabase {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(332, 290);
+			this->label2->Location = System::Drawing::Point(344, 276);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(72, 16);
 			this->label2->TabIndex = 4;
@@ -187,9 +187,13 @@ namespace Proyecto_TDatabase {
 
 				cmd->CommandText = Sentencia->Text;
 				cmd->ExecuteNonQuery();
-
-
+				DataTable^ dt = gcnew DataTable();
+				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
+				dp->Fill(dt);
+				dataGridView1->DataSource = dt;
 				CON->Close();
+
+				//CON->Close();
 
 				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 

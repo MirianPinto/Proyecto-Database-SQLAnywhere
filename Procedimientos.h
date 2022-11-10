@@ -214,7 +214,7 @@ private: System::Void Procedimientos_Load(System::Object^ sender, System::EventA
 private: System::Void CP_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->Visible = false;
-	CrearProcedimiento^ cp = gcnew CrearProcedimiento();
+	CrearProcedimiento^ cp = gcnew CrearProcedimiento(this, user, pas);
 	cp->Show();
 
 

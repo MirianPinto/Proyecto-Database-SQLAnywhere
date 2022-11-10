@@ -29,8 +29,10 @@ namespace Proyecto_TDatabase {
 
 		Form^ Opciones;
 		String^ user;
+	private: System::Windows::Forms::Button^ Crear;
+	public:
 		String^ pas;
-
+		String^ codigoCreate ="";
 		CrearVista(Form^ opciones, String^ users, String^ pass)
 		{
 			user = users;
@@ -53,7 +55,8 @@ namespace Proyecto_TDatabase {
 	private: System::Windows::Forms::TextBox^ textNV;
 	public:
 	private: System::Windows::Forms::Label^ NV;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ Sentencia;
+
 	private: System::Windows::Forms::Label^ label1;
 		   String^ acces;
 
@@ -90,8 +93,9 @@ namespace Proyecto_TDatabase {
 			this->Regresar = (gcnew System::Windows::Forms::Button());
 			this->textNV = (gcnew System::Windows::Forms::TextBox());
 			this->NV = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->Sentencia = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->Crear = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Regresar
@@ -120,14 +124,14 @@ namespace Proyecto_TDatabase {
 			this->NV->TabIndex = 2;
 			this->NV->Text = L"Nombre";
 			// 
-			// textBox2
+			// Sentencia
 			// 
-			this->textBox2->Location = System::Drawing::Point(352, 173);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(289, 248);
-			this->textBox2->TabIndex = 3;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &CrearVista::textBox2_TextChanged);
+			this->Sentencia->Location = System::Drawing::Point(352, 173);
+			this->Sentencia->Multiline = true;
+			this->Sentencia->Name = L"Sentencia";
+			this->Sentencia->Size = System::Drawing::Size(289, 248);
+			this->Sentencia->TabIndex = 3;
+			this->Sentencia->TextChanged += gcnew System::EventHandler(this, &CrearVista::textBox2_TextChanged);
 			// 
 			// label1
 			// 
@@ -138,13 +142,24 @@ namespace Proyecto_TDatabase {
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Sentencia de vista";
 			// 
+			// Crear
+			// 
+			this->Crear->Location = System::Drawing::Point(299, 470);
+			this->Crear->Name = L"Crear";
+			this->Crear->Size = System::Drawing::Size(75, 23);
+			this->Crear->TabIndex = 5;
+			this->Crear->Text = L"Crear";
+			this->Crear->UseVisualStyleBackColor = true;
+			this->Crear->Click += gcnew System::EventHandler(this, &CrearVista::Crear_Click);
+			// 
 			// CrearVista
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(707, 537);
+			this->Controls->Add(this->Crear);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->Sentencia);
 			this->Controls->Add(this->NV);
 			this->Controls->Add(this->textNV);
 			this->Controls->Add(this->Regresar);
@@ -165,18 +180,18 @@ namespace Proyecto_TDatabase {
 				OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
 
-				cmd->CommandText = "select proc_name from sys.SYSPROCEDURE WHERE proc_defn like 'create procedure%' and creator = 1";
-				cmd->ExecuteNonQuery();
+				cmd->CommandText = codigoCreate;
+					cmd->ExecuteNonQuery();
 
-				DataTable^ dt = gcnew DataTable();
+				/*DataTable^ dt = gcnew DataTable();
 				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
-				dp->Fill(dt);
+				dp->Fill(dt);*/
 				//dataGridView1->DataSource = dt;
 				CON->Close();
 
 
 
-				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show("La vista " + textNV->Text + " ha sido creada! ", "La vista " + textNV->Text + " ha sido creada! ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 
 
@@ -197,5 +212,14 @@ namespace Proyecto_TDatabase {
 	}
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void Crear_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	codigoCreate = "CREATE VIEW "+ textNV->Text+" AS " + Sentencia->Text;
+
+	ConnectionDB();
+
+	textNV->Text = "";
+	Sentencia->Text = "";
+}
 };
 }

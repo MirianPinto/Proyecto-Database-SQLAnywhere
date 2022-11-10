@@ -484,7 +484,7 @@ namespace Proyecto_TDatabase {
 				OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
 
-				cmd->CommandText = "CREATE TABLE "+ NombreTabla + " (\n" + Columnas +" PRIMARY KEY("+"),"  + ");";
+				cmd->CommandText = codigoCreate;
 				cmd->ExecuteNonQuery();
 
 
@@ -514,14 +514,47 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
+	if (Uniques->CompareTo("") == 0)
+	{
+		Uniques = Uniques;
+	}
+	else
+	{
+		Uniques = Uniques + ", ";
+	}
+	
+	
+	if (LlaveFK->CompareTo("") == 0) 
+	{
+		Primarikey = Primarikey + ")";
 
-	Uniques = Uniques + ", ";
-	Primarikey = Primarikey+ "),";
+	}
+	else 
+	{
+		Primarikey = Primarikey + "),";
+
+	}
+
+
 	LlaveFK = LlaveFK + ");";
 
 	codigoCreate = codigoCreate + columnas+ Uniques + Primarikey + LlaveFK;
 
 	ConnectionDB();
+
+	 codigoCreate = "";
+	 Primarikey = "PRIMARY KEY( ";
+	 Primarikey1 = "";
+
+	 columnas = "";
+
+	 Uniques = "";
+	 Unique = "";
+
+	 origens = "";
+
+	 LlaveFK = "";
+	 LlaveFK1 = "";
 
 }
 

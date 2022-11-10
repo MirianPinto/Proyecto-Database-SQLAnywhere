@@ -47,6 +47,7 @@ namespace Proyecto_TDatabase {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::Label^ label7;
 		   String^ acces;
+	public:
 		CrearProcedimiento(Form^ opciones, String^ users, String^ pass)
 		{
 			user = users;

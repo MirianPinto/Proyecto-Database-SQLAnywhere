@@ -163,7 +163,7 @@ namespace Proyecto_TDatabase {
 			// Accion
 			// 
 			this->Accion->Items->Add(L"Antes ");
-			this->Accion->Items->Add(L"Despues ");
+			this->Accion->Items->Add(L"Despues");
 			this->Accion->Items->Add(L"En lugar");
 			this->Accion->Location = System::Drawing::Point(115, 184);
 			this->Accion->Name = L"Accion";
@@ -358,15 +358,15 @@ namespace Proyecto_TDatabase {
 				cmd->CommandText = codigoCreate;
 				cmd->ExecuteNonQuery();
 
-				DataTable^ dt = gcnew DataTable();
+				/*DataTable^ dt = gcnew DataTable();
 				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
-				dp->Fill(dt);
+				dp->Fill(dt);*/
 				//dataGridView1->DataSource = dt;
 				CON->Close();
 
 
 
-				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show("Disparador creado!", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 
 
@@ -393,7 +393,7 @@ namespace Proyecto_TDatabase {
 private: System::Void Crear_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	String^ nivel = "";
-	if (Nivel->Text == "Nivel de Fila") 
+	if (Nivel->Text->CompareTo("Nivel de Fila") ==0)
 	{
 		nivel = "FOR EACH ROW ";
 	}
@@ -403,11 +403,11 @@ private: System::Void Crear_Click(System::Object^ sender, System::EventArgs^ e) 
 	}
 
 	String^ acion = "";
-	if (Accion->Text == "Despues")
+	if (Accion->Text->CompareTo("Despues") ==0)
 	{
 		acion = "AFTER ";
 	}
-	else if(Accion->Text == "Antes")
+	else if(Accion->Text->CompareTo("Antes") ==0)
 	{
 		acion = "BEFORE ";
 	}
@@ -417,11 +417,11 @@ private: System::Void Crear_Click(System::Object^ sender, System::EventArgs^ e) 
 	}
 
 	String^ even = "";
-	if (Event->Text == "Insertar")
+	if (Event->Text->CompareTo("Insertar") ==0)
 	{
 		even = "INSERT ";
 	}
-	else if (Event->Text == "Eliminar")
+	else if (Event->Text->CompareTo("Eliminar")==0)
 	{
 		even = "DELETE ";
 	}
@@ -432,11 +432,13 @@ private: System::Void Crear_Click(System::Object^ sender, System::EventArgs^ e) 
 
 
 	codigoCreate = "CREATE TRIGGER " + NT->Text + " " + acion + " " + even
-		+ "order 1 on " + Tablas->Text + " " + nivel + " BEGIN " + SQL->Text+ " END";
+		+ "order 1 on \"Admin-Mirian\".\"" + Tablas->Text + "\" " + nivel + " BEGIN " + SQL->Text+ " END";
 
+	ConnectionDB();
 
-
-
+	codigoCreate = "";
+	SQL->Text = "";
+	NT->Text = "";
 }
 };
 }
