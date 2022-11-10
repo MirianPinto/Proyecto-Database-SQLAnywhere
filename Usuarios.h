@@ -1,5 +1,7 @@
 #pragma once
 #include "CrearUsuarios.h"
+#include "ModificarUsuario.h"
+#include "EliminarUsuario.h"
 
 namespace Proyecto_TDatabase {
 
@@ -34,6 +36,9 @@ namespace Proyecto_TDatabase {
 		String^ user;
 		String^ pas;
 		String^ acces;
+	private: System::Windows::Forms::Button^ button4;
+	public:
+	private: System::Windows::Forms::Button^ button5;
 
 		Form^ Opciones;
 
@@ -50,6 +55,8 @@ namespace Proyecto_TDatabase {
 				acces = "";
 
 				this->button2->Enabled = true;
+				this->button4->Enabled = true;
+				this->button5->Enabled = true;
 
 			}
 			else
@@ -95,6 +102,8 @@ namespace Proyecto_TDatabase {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -150,11 +159,35 @@ namespace Proyecto_TDatabase {
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Usuarios";
 			// 
+			// button4
+			// 
+			this->button4->Enabled = false;
+			this->button4->Location = System::Drawing::Point(468, 63);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(128, 35);
+			this->button4->TabIndex = 5;
+			this->button4->Text = L"Eliminar";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Usuarios::button4_Click);
+			// 
+			// button5
+			// 
+			this->button5->Enabled = false;
+			this->button5->Location = System::Drawing::Point(468, 115);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(128, 36);
+			this->button5->TabIndex = 6;
+			this->button5->Text = L"Modificar";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Usuarios::button5_Click);
+			// 
 			// Usuarios
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(618, 456);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -222,6 +255,23 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	this->Visible = false;
+	EliminarUsuario^ cc = gcnew EliminarUsuario(this);
+	cc->Show();
+
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	this->Visible = false;
+	ModificarUsuario^ cc = gcnew ModificarUsuario(this);
+	cc->Show();
+
+
 }
 };
 }

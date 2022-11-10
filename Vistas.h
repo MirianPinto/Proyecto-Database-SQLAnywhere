@@ -1,5 +1,7 @@
 #pragma once
 #include "CrearVista.h"
+#include "ModificarVista.h"
+
 namespace Proyecto_TDatabase {
 
 	using namespace System;
@@ -34,6 +36,7 @@ namespace Proyecto_TDatabase {
 	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
 	private: System::Windows::Forms::Button^ CV;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
 	public:
 
 		Form^ Opciones;
@@ -95,6 +98,7 @@ namespace Proyecto_TDatabase {
 			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->CV = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -166,11 +170,22 @@ namespace Proyecto_TDatabase {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Vistas::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(514, 126);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(107, 41);
+			this->button4->TabIndex = 8;
+			this->button4->Text = L"Modificar Vista";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Vistas::button4_Click);
+			// 
 			// Vistas
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(652, 502);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->CV);
 			this->Controls->Add(this->domainUpDown1);
@@ -184,7 +199,7 @@ namespace Proyecto_TDatabase {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-			Vistas1();
+
 		}
 #pragma endregion
 		
@@ -331,6 +346,13 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	EliminarVista(codigoELiminar1);
 
+
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	ModificarVista^ cp = gcnew ModificarVista(this, user, pas);
+	cp->Show();
 
 }
 };

@@ -113,6 +113,15 @@
     <ClInclude Include="ModificarTabla.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ModificarVista.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarUsuario.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModificarUsuario.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -212,6 +221,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ModificarTabla.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModificarVista.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarUsuario.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModificarUsuario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

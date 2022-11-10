@@ -181,6 +181,9 @@
     <ClInclude Include="EliminarTablespaces.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="EliminarUsuario.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -191,6 +194,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModificarTabla.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarUsuario.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarVista.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm.h">
@@ -241,10 +250,13 @@
     <ClCompile Include="EliminarProcedimiento.cpp" />
     <ClCompile Include="EliminarSecuencia.cpp" />
     <ClCompile Include="EliminarTablespaces.cpp" />
+    <ClCompile Include="EliminarUsuario.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="Funciones.cpp" />
     <ClCompile Include="Indices.cpp" />
     <ClCompile Include="ModificarTabla.cpp" />
+    <ClCompile Include="ModificarUsuario.cpp" />
+    <ClCompile Include="ModificarVista.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Opciones.cpp" />
     <ClCompile Include="pch.cpp">
@@ -322,6 +334,9 @@
     <EmbeddedResource Include="EliminarTablespaces.resx">
       <DependentUpon>EliminarTablespaces.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EliminarUsuario.resx">
+      <DependentUpon>EliminarUsuario.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +348,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarTabla.resx">
       <DependentUpon>ModificarTabla.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarVista.resx">
+      <DependentUpon>ModificarVista.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
