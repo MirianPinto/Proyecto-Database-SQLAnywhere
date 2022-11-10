@@ -1,5 +1,7 @@
 #pragma once
 #include "CrearSecuencias.h"
+#include "EliminarSecuencia.h"
+
 namespace Proyecto_TDatabase {
 
 	using namespace System;
@@ -30,6 +32,7 @@ namespace Proyecto_TDatabase {
 		String^ pas;
 		String^ acces;
 	private: System::Windows::Forms::Button^ CS;
+	private: System::Windows::Forms::Button^ button3;
 	public:
 
 		Form^ Opciones;
@@ -87,6 +90,7 @@ namespace Proyecto_TDatabase {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->CS = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -140,11 +144,22 @@ namespace Proyecto_TDatabase {
 			this->CS->UseVisualStyleBackColor = true;
 			this->CS->Click += gcnew System::EventHandler(this, &Secuencias::CS_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(445, 61);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(134, 33);
+			this->button3->TabIndex = 5;
+			this->button3->Text = L"Eliminar Secuencia";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Secuencias::button3_Click);
+			// 
 			// Secuencias
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(591, 491);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->CS);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -212,6 +227,14 @@ private: System::Void CS_Click(System::Object^ sender, System::EventArgs^ e) {
 	CrearSecuencias^ cp = gcnew CrearSecuencias(this, user, pas);
 	cp->Show();
 
+
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	EliminarSecuencia^ cp = gcnew EliminarSecuencia(this, user, pas);
+	cp->Show();
+	
 
 }
 };

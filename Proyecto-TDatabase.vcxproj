@@ -163,6 +163,24 @@
     <ClInclude Include="Disparadores.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="EliminarDisparador.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EliminarFuncion.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EliminarIndice.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EliminarProcedimiento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EliminarSecuencia.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EliminarTablespaces.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -170,6 +188,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Indices.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarTabla.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm.h">
@@ -214,9 +235,16 @@
     <ClCompile Include="CrearUsuarios.cpp" />
     <ClCompile Include="CrearVista.cpp" />
     <ClCompile Include="Disparadores.cpp" />
+    <ClCompile Include="EliminarDisparador.cpp" />
+    <ClCompile Include="EliminarFuncion.cpp" />
+    <ClCompile Include="EliminarIndice.cpp" />
+    <ClCompile Include="EliminarProcedimiento.cpp" />
+    <ClCompile Include="EliminarSecuencia.cpp" />
+    <ClCompile Include="EliminarTablespaces.cpp" />
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="Funciones.cpp" />
     <ClCompile Include="Indices.cpp" />
+    <ClCompile Include="ModificarTabla.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Opciones.cpp" />
     <ClCompile Include="pch.cpp">
@@ -276,6 +304,24 @@
     <EmbeddedResource Include="Disparadores.resx">
       <DependentUpon>Disparadores.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EliminarDisparador.resx">
+      <DependentUpon>EliminarDisparador.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarFuncion.resx">
+      <DependentUpon>EliminarFuncion.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarIndice.resx">
+      <DependentUpon>EliminarIndice.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarProcedimiento.resx">
+      <DependentUpon>EliminarProcedimiento.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarSecuencia.resx">
+      <DependentUpon>EliminarSecuencia.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarTablespaces.resx">
+      <DependentUpon>EliminarTablespaces.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Indices.resx">
       <DependentUpon>Indices.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarTabla.resx">
+      <DependentUpon>ModificarTabla.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
@@ -309,6 +358,9 @@
     <EmbeddedResource Include="Vistas.resx">
       <DependentUpon>Vistas.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

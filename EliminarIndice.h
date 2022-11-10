@@ -1,6 +1,4 @@
 #pragma once
-#include "CrearTablespace.h"
-#include "EliminarTablespaces.h"
 
 namespace Proyecto_TDatabase {
 
@@ -14,13 +12,14 @@ namespace Proyecto_TDatabase {
 	using namespace System::Data::Odbc;
 	using namespace Proyecto_TDatabase;
 
+
 	/// <summary>
-	/// Resumen de Tablespaces
+	/// Resumen de EliminarIndice
 	/// </summary>
-	public ref class Tablespaces : public System::Windows::Forms::Form
+	public ref class EliminarIndice : public System::Windows::Forms::Form
 	{
 	public:
-		Tablespaces(void)
+		EliminarIndice(void)
 		{
 			InitializeComponent();
 			//
@@ -31,13 +30,10 @@ namespace Proyecto_TDatabase {
 		String^ user;
 		String^ pas;
 		String^ acces;
-	private: System::Windows::Forms::Button^ CD;
-	private: System::Windows::Forms::Button^ button3;
-	public:
 
 		Form^ Opciones;
 
-		Tablespaces(Form^ opciones, String^ users, String^ pass)
+		EliminarIndice(Form^ opciones, String^ users, String^ pass)
 		{
 			user = users;
 			pas = pass;
@@ -52,24 +48,26 @@ namespace Proyecto_TDatabase {
 				acces = "\"Admin-Mirian\".";
 			}
 			InitializeComponent();
+			Indices();
 		}
 
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
 		/// </summary>
-		~Tablespaces()
+		~EliminarIndice()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
-	protected:
 	private: System::Windows::Forms::Button^ button1;
+	protected:
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Label^ label1;
 
 	private:
 		/// <summary>
@@ -84,97 +82,83 @@ namespace Proyecto_TDatabase {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->CD = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(219, 62);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(80, 16);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"DBSPACES";
 			// 
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(13, 13);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(89, 31);
-			this->button1->TabIndex = 1;
+			this->button1->Size = System::Drawing::Size(109, 41);
+			this->button1->TabIndex = 0;
 			this->button1->Text = L"Regresar";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Tablespaces::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &EliminarIndice::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(212, 99);
+			this->button2->Location = System::Drawing::Point(134, 227);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 30);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"Buscar";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"Eliminar";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &Tablespaces::button2_Click);
+			this->button2->Click += gcnew System::EventHandler(this, &EliminarIndice::button2_Click);
+			// 
+			// domainUpDown1
+			// 
+			this->domainUpDown1->Location = System::Drawing::Point(119, 130);
+			this->domainUpDown1->Name = L"domainUpDown1";
+			this->domainUpDown1->Size = System::Drawing::Size(120, 22);
+			this->domainUpDown1->TabIndex = 2;
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(13, 154);
+			this->dataGridView1->Location = System::Drawing::Point(283, 13);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(505, 271);
+			this->dataGridView1->Size = System::Drawing::Size(58, 41);
 			this->dataGridView1->TabIndex = 3;
+			this->dataGridView1->Visible = false;
 			// 
-			// CD
+			// label1
 			// 
-			this->CD->Location = System::Drawing::Point(382, 13);
-			this->CD->Name = L"CD";
-			this->CD->Size = System::Drawing::Size(119, 31);
-			this->CD->TabIndex = 4;
-			this->CD->Text = L"Crear dbspace";
-			this->CD->UseVisualStyleBackColor = true;
-			this->CD->Click += gcnew System::EventHandler(this, &Tablespaces::CD_Click);
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(119, 85);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(43, 16);
+			this->label1->TabIndex = 4;
+			this->label1->Text = L"Indice";
 			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(382, 50);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(119, 47);
-			this->button3->TabIndex = 5;
-			this->button3->Text = L"Eliminar dbspace";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &Tablespaces::button3_Click);
-			// 
-			// Tablespaces
+			// EliminarIndice
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(530, 437);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->CD);
+			this->ClientSize = System::Drawing::Size(364, 303);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->domainUpDown1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->label1);
-			this->Name = L"Tablespaces";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Tablespaces";
+			this->Name = L"EliminarIndice";
+			this->Text = L"EliminarIndice";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-
-		void ConnectionDB()
+		void Indices()
 		{
+			dataGridView1->Visible = false;
+
 			String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
 			OdbcConnection^ CON = gcnew OdbcConnection(connString);
 			try
@@ -182,17 +166,29 @@ namespace Proyecto_TDatabase {
 				CON->Open();
 				OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
-				
-				cmd->CommandText = "select dbspace_name FROM " + acces + " sys.SYSDBSPACE";
+
+				cmd->CommandText = "SELECT iname as Nombre, tname as Tabla, indextype as Tipo, colnames as columna FROM sys.SYSINDEXES Where icreator = 'Admin-Mirian'";
 				cmd->ExecuteNonQuery();
+
+
 
 				DataTable^ dt = gcnew DataTable();
 				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
 				dp->Fill(dt);
 				dataGridView1->DataSource = dt;
+
+
+				for each (DataGridViewRow ^ row in dataGridView1->Rows)
+				{
+					if (row->Cells[0]->Value != nullptr) {
+						domainUpDown1->Items->Add(row->Cells[0]->Value->ToString());
+					}
+				}
+
+
 				CON->Close();
-
-
+				//dataGridView1->Visible = true;
+				dataGridView1->DataSource = "";
 
 				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
@@ -206,31 +202,51 @@ namespace Proyecto_TDatabase {
 			}
 		}
 
+		void Eliminarindices(String^ codigoELiminar)
+		{
+			String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
+			OdbcConnection^ CON = gcnew OdbcConnection(connString);
+			try
+			{
+				CON->Open();
+				OdbcCommand^ cmd = CON->CreateCommand();
+				cmd->CommandType = CommandType::Text;
 
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+				cmd->CommandText = codigoELiminar;
+				cmd->ExecuteNonQuery();
 
-		ConnectionDB();
-	}
+				/*DataTable^ dt = gcnew DataTable();
+				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
+				dp->Fill(dt);
+				dataGridView1->DataSource = dt;*/
+				CON->Close();
+
+
+
+
+				MessageBox::Show("Se elimino correctamente", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+
+
+
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message, "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				CON->Close();
+			}
+		}
+
+
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		this->Visible = false;
 		Opciones->Show();
 
-
 	}
-private: System::Void CD_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ codigoELiminar1 = "DROP INDEX " + domainUpDown1->Text + "; ";
 
-	this->Visible = false;
-	CrearTablespace^ cp = gcnew CrearTablespace(this, user, pas);
-	cp->Show();
-
-
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	this->Visible = false;
-	EliminarTablespaces^ cp = gcnew EliminarTablespaces(this, user, pas);
-	cp->Show();
+	Eliminarindices(codigoELiminar1);
 
 }
 };

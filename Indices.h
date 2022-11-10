@@ -1,4 +1,6 @@
 #pragma once
+#include "CrearIndices.h"
+#include "EliminarIndice.h"
 
 namespace Proyecto_TDatabase {
 
@@ -31,6 +33,9 @@ namespace Proyecto_TDatabase {
 		String^ user;
 		String^ pas;
 		String^ acces;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	public:
 
 		Form^ Opciones;
 
@@ -86,6 +91,8 @@ namespace Proyecto_TDatabase {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -129,11 +136,33 @@ namespace Proyecto_TDatabase {
 			this->dataGridView1->Size = System::Drawing::Size(527, 260);
 			this->dataGridView1->TabIndex = 3;
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(433, 13);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(115, 34);
+			this->button3->TabIndex = 4;
+			this->button3->Text = L"Crear Indice";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Indices::button3_Click);
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(433, 54);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(115, 40);
+			this->button4->TabIndex = 5;
+			this->button4->Text = L"Eliminar Indice";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Indices::button4_Click);
+			// 
 			// Indices
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(577, 451);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
@@ -141,6 +170,7 @@ namespace Proyecto_TDatabase {
 			this->Name = L"Indices";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Indices";
+			this->Load += gcnew System::EventHandler(this, &Indices::Indices_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -192,5 +222,23 @@ namespace Proyecto_TDatabase {
 
 		ConnectionDB();
 	}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Visible = false;
+	CrearIndices^ ci = gcnew CrearIndices(this, user, pas);
+	ci->Show();
+
+
+}
+private: System::Void Indices_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	this->Visible = false;
+	EliminarIndice^ ci = gcnew EliminarIndice(this, user, pas);
+	ci->Show();
+
+
+}
 };
 }

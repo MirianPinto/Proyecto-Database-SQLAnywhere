@@ -1,5 +1,6 @@
 #pragma once
 #include "CrearProcedimiento.h"
+#include "EliminarProcedimiento.h"
 
 namespace Proyecto_TDatabase {
 
@@ -36,6 +37,8 @@ namespace Proyecto_TDatabase {
 		Form^ Opciones;
 		String^ user;
 		String^ pas;
+	private: System::Windows::Forms::Button^ button3;
+	public:
 		String^ acces;
 		Procedimientos(Form^ opciones, String^ users, String^ pass)
 		{
@@ -90,6 +93,7 @@ namespace Proyecto_TDatabase {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->CP = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -143,11 +147,22 @@ namespace Proyecto_TDatabase {
 			this->CP->UseVisualStyleBackColor = true;
 			this->CP->Click += gcnew System::EventHandler(this, &Procedimientos::CP_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(407, 60);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(150, 45);
+			this->button3->TabIndex = 6;
+			this->button3->Text = L"Eliminar Procedimeinto";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Procedimientos::button3_Click);
+			// 
 			// Procedimientos
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(569, 453);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->CP);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -217,6 +232,14 @@ private: System::Void CP_Click(System::Object^ sender, System::EventArgs^ e) {
 	CrearProcedimiento^ cp = gcnew CrearProcedimiento(this, user, pas);
 	cp->Show();
 
+
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	
+		this->Visible = false;
+		EliminarProcedimiento^ cp = gcnew EliminarProcedimiento(this, user, pas);
+	cp->Show();
 
 }
 };

@@ -92,6 +92,27 @@
     <ClInclude Include="CrearIndices.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EliminarDisparador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarProcedimiento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarFuncion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarIndice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarSecuencia.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarTablespaces.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModificarTabla.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -172,10 +193,34 @@
     <ClCompile Include="CrearIndices.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EliminarDisparador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarProcedimiento.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarFuncion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarIndice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarSecuencia.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarTablespaces.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModificarTabla.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

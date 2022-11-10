@@ -30,9 +30,11 @@ namespace Proyecto_TDatabase {
 		Form^ Opciones;
 		String^ user;
 		String^ pas;
+		String^ Createcodigo = "";
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ Name;
 	public:
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Button^ button1;
 		   String^ acces;
 
@@ -83,7 +85,7 @@ namespace Proyecto_TDatabase {
 		{
 			this->Regresar = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->Name = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -106,12 +108,12 @@ namespace Proyecto_TDatabase {
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Nombre";
 			// 
-			// textBox1
+			// Name
 			// 
-			this->textBox1->Location = System::Drawing::Point(211, 197);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(145, 22);
-			this->textBox1->TabIndex = 2;
+			this->Name->Location = System::Drawing::Point(211, 197);
+			this->Name->Name = L"Name";
+			this->Name->Size = System::Drawing::Size(145, 22);
+			this->Name->TabIndex = 2;
 			// 
 			// button1
 			// 
@@ -121,6 +123,7 @@ namespace Proyecto_TDatabase {
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"Crear";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &CrearTablespace::button1_Click);
 			// 
 			// CrearTablespace
 			// 
@@ -128,10 +131,10 @@ namespace Proyecto_TDatabase {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(581, 435);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->Name);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Regresar);
-			this->Name = L"CrearTablespace";
+			//this->Name = L"CrearTablespace";
 			this->Text = L"CrearTablespace";
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -148,18 +151,18 @@ namespace Proyecto_TDatabase {
 				OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
 
-				cmd->CommandText = "select proc_name from sys.SYSPROCEDURE WHERE proc_defn like 'create procedure%' and creator = 1";
+				cmd->CommandText = Createcodigo;
 				cmd->ExecuteNonQuery();
 
-				DataTable^ dt = gcnew DataTable();
+				/*DataTable^ dt = gcnew DataTable();
 				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
-				dp->Fill(dt);
+				dp->Fill(dt);*/
 				//dataGridView1->DataSource = dt;
 				CON->Close();
 
 
 
-				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show("dbspace creada correctamente", "Creacion de dbspace", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 
 
@@ -178,5 +181,16 @@ namespace Proyecto_TDatabase {
 		Opciones->Show();
 
 	}
-	};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		Createcodigo = "CREATE DBSPACE " + Name->Text + " AS \'" + Name->Text + ".db\';";
+
+		ConnectionDB();
+
+
+		Name->Text = "";
+
+
+	}
+};
 }

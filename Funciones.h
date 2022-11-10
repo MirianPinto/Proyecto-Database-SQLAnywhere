@@ -1,5 +1,7 @@
 #pragma once
 #include "CrearFunciones.h"
+#include "EliminarFuncion.h"
+
 namespace Proyecto_TDatabase {
 
 	using namespace System;
@@ -31,6 +33,7 @@ namespace Proyecto_TDatabase {
 		String^ pas;
 		String^ acces;
 	private: System::Windows::Forms::Button^ CF;
+	private: System::Windows::Forms::Button^ button3;
 	public:
 
 		Form^ Opciones;
@@ -87,6 +90,7 @@ namespace Proyecto_TDatabase {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->CF = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -140,11 +144,22 @@ namespace Proyecto_TDatabase {
 			this->CF->UseVisualStyleBackColor = true;
 			this->CF->Click += gcnew System::EventHandler(this, &Funciones::CF_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(403, 54);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(130, 42);
+			this->button3->TabIndex = 5;
+			this->button3->Text = L"Eliminar Funcion";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Funciones::button3_Click);
+			// 
 			// Funciones
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(582, 467);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->CF);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
@@ -208,6 +223,14 @@ private: System::Void CF_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->Visible = false;
 	CrearFunciones^ cp = gcnew CrearFunciones(this, user, pas);
+	cp->Show();
+
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	
+		this->Visible = false;
+		EliminarFuncion^ cp = gcnew EliminarFuncion(this, user, pas);
 	cp->Show();
 
 }

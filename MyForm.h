@@ -2,7 +2,7 @@
 #include "CrearUsuarios.h"
 #include <iostream>
 #include "CrearTabla.h"
-
+#include "ModificarTabla.h"
 
 namespace Proyecto_TDatabase {
 #include "CrearUsuarios.h"
@@ -44,6 +44,8 @@ namespace Proyecto_TDatabase {
 		String^ acces;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
 
 	public:
 		Form^ Opciones;
@@ -66,6 +68,7 @@ namespace Proyecto_TDatabase {
 			}
 
 			InitializeComponent();
+			ConnectionDB1();
 		}
 
 
@@ -106,6 +109,8 @@ namespace Proyecto_TDatabase {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -167,11 +172,33 @@ namespace Proyecto_TDatabase {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(610, 49);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(118, 32);
+			this->button4->TabIndex = 8;
+			this->button4->Text = L"Eliminar Tabla";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(610, 88);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(118, 31);
+			this->button5->TabIndex = 9;
+			this->button5->Text = L"Modificar";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(757, 482);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button1);
@@ -185,8 +212,6 @@ namespace Proyecto_TDatabase {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
-			ConnectionDB1();
 
 		}
 #pragma endregion
@@ -275,6 +300,39 @@ namespace Proyecto_TDatabase {
 				CON->Close();
 			}
 		}
+		void EliminarTabla(String^ codigoELiminar)
+		{
+			String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
+			OdbcConnection^ CON = gcnew OdbcConnection(connString);
+			try
+			{
+				CON->Open();
+				OdbcCommand^ cmd = CON->CreateCommand();
+				cmd->CommandType = CommandType::Text;
+
+				cmd->CommandText = codigoELiminar;
+				cmd->ExecuteNonQuery();
+
+				/*DataTable^ dt = gcnew DataTable();
+				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
+				dp->Fill(dt);
+				dataGridView1->DataSource = dt;*/
+				CON->Close();
+
+
+
+
+				MessageBox::Show("Se elimino correctamente", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+
+
+
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message, "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				CON->Close();
+			}
+		}
 
 
 
@@ -303,6 +361,23 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	String^ codigoELiminar1 = "DROP TABLE " + domainUpDown1->Text + "; ";
+
+	EliminarTabla(codigoELiminar1);
+
+
+
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	
+	this->Visible = false;
+	ModificarTabla^ CT = gcnew ModificarTabla(this, user, pas);
+	CT->Show();
+
 }
 };
 }

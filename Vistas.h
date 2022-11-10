@@ -33,6 +33,7 @@ namespace Proyecto_TDatabase {
 		String^ acces;
 	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
 	private: System::Windows::Forms::Button^ CV;
+	private: System::Windows::Forms::Button^ button3;
 	public:
 
 		Form^ Opciones;
@@ -93,6 +94,7 @@ namespace Proyecto_TDatabase {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->CV = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -138,7 +140,6 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Items->Add(L"Estudiantes_Ingeneria");
 			this->domainUpDown1->Location = System::Drawing::Point(326, 74);
 			this->domainUpDown1->Name = L"domainUpDown1";
 			this->domainUpDown1->Size = System::Drawing::Size(151, 22);
@@ -149,17 +150,28 @@ namespace Proyecto_TDatabase {
 			// 
 			this->CV->Location = System::Drawing::Point(514, 13);
 			this->CV->Name = L"CV";
-			this->CV->Size = System::Drawing::Size(100, 30);
+			this->CV->Size = System::Drawing::Size(107, 40);
 			this->CV->TabIndex = 6;
 			this->CV->Text = L"Crear Vista";
 			this->CV->UseVisualStyleBackColor = true;
 			this->CV->Click += gcnew System::EventHandler(this, &Vistas::CV_Click);
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(514, 66);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(107, 37);
+			this->button3->TabIndex = 7;
+			this->button3->Text = L"Eliminar Vista";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Vistas::button3_Click);
 			// 
 			// Vistas
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(652, 502);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->CV);
 			this->Controls->Add(this->domainUpDown1);
 			this->Controls->Add(this->button2);
@@ -172,9 +184,56 @@ namespace Proyecto_TDatabase {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
+			Vistas1();
 		}
 #pragma endregion
+		
+		void Vistas1()
+		{
+			//dataGridView1->Visible = false;
+
+			String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
+			OdbcConnection^ CON = gcnew OdbcConnection(connString);
+			try
+			{
+				CON->Open();
+				OdbcCommand^ cmd = CON->CreateCommand();
+				cmd->CommandType = CommandType::Text;
+
+				cmd->CommandText = "SELECT viewname FROM sys.SYSVIEWs where vcreator = 'Admin-Mirian'";
+				cmd->ExecuteNonQuery();
+
+
+
+				DataTable^ dt = gcnew DataTable();
+				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
+				dp->Fill(dt);
+				dataGridView1->DataSource = dt;
+
+
+				for each (DataGridViewRow ^ row in dataGridView1->Rows)
+				{
+					if (row->Cells[0]->Value != nullptr) {
+						domainUpDown1->Items->Add(row->Cells[0]->Value->ToString());
+					}
+				}
+
+
+				CON->Close();
+				dataGridView1->Visible = true;
+				dataGridView1->DataSource = "";
+
+				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+
+
+
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message, "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				CON->Close();
+			}
+		}
 
 
 		void ConnectionDB()
@@ -197,6 +256,7 @@ namespace Proyecto_TDatabase {
 				CON->Close();
 
 
+				
 
 				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
@@ -209,6 +269,41 @@ namespace Proyecto_TDatabase {
 				CON->Close();
 			}
 		}
+
+		void EliminarVista(String^ codigoELiminar)
+		{
+			String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
+			OdbcConnection^ CON = gcnew OdbcConnection(connString);
+			try
+			{
+				CON->Open();
+				OdbcCommand^ cmd = CON->CreateCommand();
+				cmd->CommandType = CommandType::Text;
+
+				cmd->CommandText = codigoELiminar;
+				cmd->ExecuteNonQuery();
+
+				/*DataTable^ dt = gcnew DataTable();
+				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
+				dp->Fill(dt);
+				dataGridView1->DataSource = dt;*/
+				CON->Close();
+
+
+
+
+				MessageBox::Show("Se elimino correctamente", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+
+
+
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(ex->Message, "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				CON->Close();
+			}
+		}
+
 
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -229,6 +324,14 @@ private: System::Void CV_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Visible = false;
 	CrearVista^ cp = gcnew CrearVista(this, user, pas);
 	cp->Show();
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	String^ codigoELiminar1 = "DROP VIEW " + domainUpDown1->Text + "; " ;
+
+	EliminarVista(codigoELiminar1);
+
+
 }
 };
 }
