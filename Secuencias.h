@@ -2,6 +2,7 @@
 #include "CrearSecuencias.h"
 #include "EliminarSecuencia.h"
 #include "DDLSecuencias.h"
+#include "ModificarSecuencias.h"
 
 namespace Proyecto_TDatabase {
 
@@ -177,6 +178,7 @@ namespace Proyecto_TDatabase {
 			this->button5->TabIndex = 7;
 			this->button5->Text = L"Modificar secuencia";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Secuencias::button5_Click);
 			// 
 			// Secuencias
 			// 
@@ -268,6 +270,14 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	DDLSecuencias^ cp = gcnew DDLSecuencias(this, user, pas);
 	cp->Show();
 	
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	ModificarSecuencias^ cp = gcnew ModificarSecuencias(this, user, pas);
+	cp->Show();
+
+
 }
 };
 }

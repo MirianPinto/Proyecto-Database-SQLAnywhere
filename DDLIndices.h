@@ -182,11 +182,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 
 
-	Sentencia->Text = "ALTER{ INDEX nombre_indice\r\n"
-		+ "| [INDEX] FOREIGN KEY nombre_rol\r\n"
-		+ "| [INDEX] PRIMARY KEY }\r\n"
-		+ "ON nombre_objeto{ REBUILD | sentencia_rename | sentencia_cluster }}\r\n"
-		+ "ALTER{ INDEX nombre_indice\r\n";
+	Sentencia->Text = "ALTER INDEX nombre_indice\r\n"
+		+ "ON nombre_objeto "
+		+ " /*CLUSTERED|NONCLUSTERED  O RENAME AS Nuevo_nombre*/;\r\n";
 
 
 }

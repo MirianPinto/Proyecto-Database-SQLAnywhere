@@ -184,7 +184,7 @@ namespace Proyecto_TDatabase {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		Createcodigo = "CREATE DBSPACE " + Name->Text + " AS \'" + Name->Text + ".db\';";
+		Createcodigo = "CREATE DBSPACE " + Name->Text + " AS C:\\SQLANYWHERE\\DBspace\\" + Name->Text + ".db\'\;";
 
 		ConnectionDB();
 

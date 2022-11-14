@@ -110,7 +110,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// textNV
 			// 
-			this->textNV->Location = System::Drawing::Point(91, 230);
+			this->textNV->Location = System::Drawing::Point(101, 268);
 			this->textNV->Name = L"textNV";
 			this->textNV->Size = System::Drawing::Size(100, 22);
 			this->textNV->TabIndex = 1;
@@ -118,7 +118,7 @@ namespace Proyecto_TDatabase {
 			// NV
 			// 
 			this->NV->AutoSize = true;
-			this->NV->Location = System::Drawing::Point(110, 211);
+			this->NV->Location = System::Drawing::Point(120, 249);
 			this->NV->Name = L"NV";
 			this->NV->Size = System::Drawing::Size(56, 16);
 			this->NV->TabIndex = 2;
@@ -144,9 +144,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// Crear
 			// 
-			this->Crear->Location = System::Drawing::Point(299, 470);
+			this->Crear->Location = System::Drawing::Point(289, 457);
 			this->Crear->Name = L"Crear";
-			this->Crear->Size = System::Drawing::Size(75, 23);
+			this->Crear->Size = System::Drawing::Size(120, 40);
 			this->Crear->TabIndex = 5;
 			this->Crear->Text = L"Crear";
 			this->Crear->UseVisualStyleBackColor = true;

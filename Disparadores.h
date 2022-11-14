@@ -2,6 +2,7 @@
 #include "CrearDisparadores.h"
 #include "EliminarDisparador.h"
 #include "DDLDisparador.h"
+#include "ModificarDisparador.h"
 
 namespace Proyecto_TDatabase {
 
@@ -170,6 +171,7 @@ namespace Proyecto_TDatabase {
 			this->button4->TabIndex = 6;
 			this->button4->Text = L"Modificar DIsparador";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Disparadores::button4_Click);
 			// 
 			// button5
 			// 
@@ -272,6 +274,14 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	cp->Show();
 
 	
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	
+		this->Visible = false;
+		ModificarDisparador^ cp = gcnew ModificarDisparador(this, user, pas);
+	cp->Show();
+
 }
 };
 }

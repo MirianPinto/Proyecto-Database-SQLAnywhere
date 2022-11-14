@@ -2,6 +2,7 @@
 #include "CrearIndices.h"
 #include "EliminarIndice.h"
 #include "DDLIndices.h"
+#include "ModificarIndice.h"
 
 namespace Proyecto_TDatabase {
 
@@ -169,6 +170,7 @@ namespace Proyecto_TDatabase {
 			this->button5->TabIndex = 6;
 			this->button5->Text = L"Modificar Indice";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Indices::button5_Click);
 			// 
 			// button6
 			// 
@@ -214,7 +216,7 @@ namespace Proyecto_TDatabase {
 				OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
 
-				cmd->CommandText = "SELECT iname as Nombre, tname as Tabla, indextype as Tipo, colnames as columna FROM sys.SYSINDEXES Where icreator = 'Admin-Mirian'";
+				cmd->CommandText = "SELECT iname as Nombre, tname as Tabla, indextype as Tipo, colnames as columna FROM sys.SYSINDEXES Where icreator = 'Admin-Mirian' and indextype = 'Non-unique'";
 				cmd->ExecuteNonQuery();
 
 				DataTable^ dt = gcnew DataTable();
@@ -272,6 +274,14 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	DDLIndices^ ci = gcnew DDLIndices(this, user, pas);
 	ci->Show();
 	
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+	this->Visible = false;
+	ModificarIndice^ ci = gcnew ModificarIndice(this, user, pas);
+	ci->Show();
+
 }
 };
 }

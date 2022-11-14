@@ -178,16 +178,16 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		+ "START WITH number\r\n"
 		+ "INCREMENT BY numero\r\n"
 		+ "MINVALUE numero\r\n"
-		+ "MAXCALUE numero\r\n"
+		+ "MAXVALUE numero\r\n"
 		+ "CYCLE;";
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	Sentencia->Text = "ALTER SEQUENCE nombre_secuencia \r\n"
-		+ "START WITH nuevo_number\r\n"
+		+ "RESTART WITH nuevo_number\r\n"
 		+ "INCREMENT BY nuevo_number\r\n"
 		+ "MINVALUE nuevo_number\r\n"
-		+ "MAXCALUE nuevo_number\r\n"
+		+ "MAXVALUE nuevo_number\r\n"
 		+ "CYCLE;";
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {

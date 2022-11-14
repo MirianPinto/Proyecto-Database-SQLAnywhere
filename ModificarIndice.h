@@ -8,41 +8,27 @@ namespace Proyecto_TDatabase {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
-
 	using namespace System::Data::Odbc;
 	using namespace Proyecto_TDatabase;
-
 	/// <summary>
-	/// Resumen de ModificarVista
+	/// Resumen de ModificarIndice
 	/// </summary>
-	public ref class ModificarVista : public System::Windows::Forms::Form
+	public ref class ModificarIndice : public System::Windows::Forms::Form
 	{
 	public:
-		ModificarVista(void)
+		ModificarIndice(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
 		}
+		Form^ Opciones;
 		String^ user;
 		String^ pas;
+
 		String^ acces;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::DomainUpDown^ vistas;
-	private: System::Windows::Forms::Label^ label1;
-
-	private: System::Windows::Forms::TextBox^ Anterior;
-
-
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	public:
-
-		Form^ Opciones;
-
-		ModificarVista(Form^ opciones, String^ users, String^ pass)
+		ModificarIndice(Form^ opciones, String^ users, String^ pass)
 		{
 			user = users;
 			pas = pass;
@@ -57,20 +43,26 @@ namespace Proyecto_TDatabase {
 				acces = "\"Admin-Mirian\".";
 			}
 			InitializeComponent();
-			Vistas1();
-
+			Indices();
 		}
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
 		/// </summary>
-		~ModificarVista()
+		~ModificarIndice()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ button1;
+	protected:
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::DomainUpDown^ domainUpDown1;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ Alterar;
 
 	private:
 		/// <summary>
@@ -87,86 +79,82 @@ namespace Proyecto_TDatabase {
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->vistas = (gcnew System::Windows::Forms::DomainUpDown());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->Anterior = (gcnew System::Windows::Forms::TextBox());
+			this->domainUpDown1 = (gcnew System::Windows::Forms::DomainUpDown());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->Alterar = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(24, 13);
+			this->button1->Location = System::Drawing::Point(13, 13);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(111, 39);
+			this->button1->Size = System::Drawing::Size(92, 36);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Regresar";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &ModificarVista::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &ModificarIndice::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(186, 343);
+			this->button2->Location = System::Drawing::Point(230, 412);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(107, 43);
+			this->button2->Size = System::Drawing::Size(89, 39);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Alterar";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &ModificarVista::button2_Click);
+			this->button2->Click += gcnew System::EventHandler(this, &ModificarIndice::button2_Click);
 			// 
-			// vistas
+			// domainUpDown1
 			// 
-			this->vistas->Location = System::Drawing::Point(191, 109);
-			this->vistas->Name = L"vistas";
-			this->vistas->Size = System::Drawing::Size(120, 22);
-			this->vistas->TabIndex = 2;
-			this->vistas->SelectedItemChanged += gcnew System::EventHandler(this, &ModificarVista::vistas_SelectedItemChanged);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(201, 78);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(92, 16);
-			this->label1->TabIndex = 3;
-			this->label1->Text = L"Vista a alterar:";
-			// 
-			// Anterior
-			// 
-			this->Anterior->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->Anterior->Location = System::Drawing::Point(49, 147);
-			this->Anterior->Multiline = true;
-			this->Anterior->Name = L"Anterior";
-			this->Anterior->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->Anterior->Size = System::Drawing::Size(395, 190);
-			this->Anterior->TabIndex = 5;
+			this->domainUpDown1->Location = System::Drawing::Point(213, 142);
+			this->domainUpDown1->Name = L"domainUpDown1";
+			this->domainUpDown1->Size = System::Drawing::Size(120, 22);
+			this->domainUpDown1->TabIndex = 2;
+			this->domainUpDown1->SelectedItemChanged += gcnew System::EventHandler(this, &ModificarIndice::domainUpDown1_SelectedItemChanged);
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(366, 15);
+			this->dataGridView1->Location = System::Drawing::Point(495, 29);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(78, 37);
-			this->dataGridView1->TabIndex = 8;
+			this->dataGridView1->Size = System::Drawing::Size(30, 37);
+			this->dataGridView1->TabIndex = 3;
 			this->dataGridView1->Visible = false;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ModificarVista::dataGridView1_CellContentClick);
 			// 
-			// ModificarVista
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(210, 107);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(98, 16);
+			this->label1->TabIndex = 4;
+			this->label1->Text = L"Indice a alterar:";
+			// 
+			// Alterar
+			// 
+			this->Alterar->Location = System::Drawing::Point(79, 180);
+			this->Alterar->Multiline = true;
+			this->Alterar->Name = L"Alterar";
+			this->Alterar->Size = System::Drawing::Size(411, 214);
+			this->Alterar->TabIndex = 5;
+			// 
+			// ModificarIndice
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(507, 410);
-			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->Anterior);
+			this->ClientSize = System::Drawing::Size(597, 480);
+			this->Controls->Add(this->Alterar);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->vistas);
+			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->domainUpDown1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Name = L"ModificarVista";
-			this->Text = L"ModificarVista";
-			this->Load += gcnew System::EventHandler(this, &ModificarVista::ModificarVista_Load);
+			this->Name = L"ModificarIndice";
+			this->Text = L"ModificarIndice";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -174,11 +162,8 @@ namespace Proyecto_TDatabase {
 		}
 #pragma endregion
 
-		//SELECT viewtext, viewname FROM sys.SYSVIEWs where vcreator = 'Admin-Mirian' and viewname = ;
-		void Vistas2()
+		void Ind2()
 		{
-			//dataGridView1->Visible = false;
-
 			String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
 			OdbcConnection^ CON = gcnew OdbcConnection(connString);
 			try
@@ -187,33 +172,30 @@ namespace Proyecto_TDatabase {
 				OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
 
-				cmd->CommandText = "SELECT viewtext, viewname FROM sys.SYSVIEWs where vcreator = 'Admin-Mirian' and viewname = '" + vistas->Text+"'";
+
+				cmd->CommandText = "SELECT iname as Nombre, tname as Tabla, indextype as Tipo, colnames as columna FROM sys.SYSINDEXES Where icreator = 'Admin-Mirian' and indextype = 'Non-unique' and iname = '" + domainUpDown1->Text +  "'";
 				cmd->ExecuteNonQuery();
-
-
 
 				DataTable^ dt = gcnew DataTable();
 				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
 				dp->Fill(dt);
 				dataGridView1->DataSource = dt;
+				CON->Close();
 
-
+				String^ codi = "";
 				for each (DataGridViewRow ^ row in dataGridView1->Rows)
 				{
 					if (row->Cells[0]->Value != nullptr) {
-
 						String^ s = row->Cells[0]->Value->ToString();
 
-
-						Anterior->Text = s->Replace("create", "ALTER");
+						codi = "ALTER INDEX " + domainUpDown1->Text + " ON " + row->Cells[1]->Value->ToString() + "/*CLUSTERED|NONCLUSTERED  O RENAME AS Nuevo_nombre*/; ";
+						
 					}
 				}
 
 
-				CON->Close();
-				//dataGridView1->Visible = true;
-				//dataGridView1->DataSource = "";
 
+				Alterar->Text = codi;
 				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 
@@ -226,10 +208,9 @@ namespace Proyecto_TDatabase {
 			}
 		}
 
-		void Vistas1()
-		{
-			//dataGridView1->Visible = false;
 
+		void Indices()
+		{
 			String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
 			OdbcConnection^ CON = gcnew OdbcConnection(connString);
 			try
@@ -238,28 +219,24 @@ namespace Proyecto_TDatabase {
 				OdbcCommand^ cmd = CON->CreateCommand();
 				cmd->CommandType = CommandType::Text;
 
-				cmd->CommandText = "SELECT viewname FROM sys.SYSVIEWs where vcreator = 'Admin-Mirian'";
+
+				cmd->CommandText = "SELECT iname as Nombre, tname as Tabla, indextype as Tipo, colnames as columna FROM sys.SYSINDEXES Where icreator = 'Admin-Mirian' and indextype = 'Non-unique'";
 				cmd->ExecuteNonQuery();
-
-
 
 				DataTable^ dt = gcnew DataTable();
 				OdbcDataAdapter^ dp = gcnew OdbcDataAdapter(cmd);
 				dp->Fill(dt);
 				dataGridView1->DataSource = dt;
+				CON->Close();
 
 
 				for each (DataGridViewRow ^ row in dataGridView1->Rows)
 				{
 					if (row->Cells[0]->Value != nullptr) {
-						vistas->Items->Add(row->Cells[0]->Value->ToString());
+						domainUpDown1->Items->Add(row->Cells[0]->Value->ToString());
 					}
 				}
 
-
-				CON->Close();
-				//dataGridView1->Visible = true;
-				//dataGridView1->DataSource = "";
 
 				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
@@ -272,8 +249,7 @@ namespace Proyecto_TDatabase {
 				CON->Close();
 			}
 		}
-
-		void ModificarVistaa(String^ codigoELiminar)
+		void Modificarinde(String^ codigoELiminar)
 		{
 			String^ connString = "Dsn=TBD1;uid=" + user + ";pwd=" + pas;
 			OdbcConnection^ CON = gcnew OdbcConnection(connString);
@@ -307,29 +283,25 @@ namespace Proyecto_TDatabase {
 			}
 		}
 
-	private: System::Void ModificarVista_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
+
+
+
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
 
 		this->Visible = false;
 		Opciones->Show();
-
+		//regr
 	}
-	private: System::Void vistas_SelectedItemChanged(System::Object^ sender, System::EventArgs^ e) {
-
-		Vistas2();
-
-
-	}
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	//String^ codigo = "ALTER VIEW \"Admin - Mirian\".\"" + vistas->Text + "\" (  ) AS " + nueva->Text + ";";
 
+	Modificarinde(Alterar->Text);
 
-	ModificarVistaa(Anterior->Text);
+}
+private: System::Void domainUpDown1_SelectedItemChanged(System::Object^ sender, System::EventArgs^ e) {
 
+	Ind2();
 }
 };
 }

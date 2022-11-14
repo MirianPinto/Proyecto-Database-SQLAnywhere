@@ -220,7 +220,28 @@
     <ClInclude Include="Indices.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ModificarDBspace.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarDisparador.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarFunciones.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarIndice.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarProcedimeintos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarSecuencias.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ModificarTabla.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModificarTablas2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ModificarUsuario.h">
@@ -290,7 +311,14 @@
     <ClCompile Include="Form1.cpp" />
     <ClCompile Include="Funciones.cpp" />
     <ClCompile Include="Indices.cpp" />
+    <ClCompile Include="ModificarDBspace.cpp" />
+    <ClCompile Include="ModificarDisparador.cpp" />
+    <ClCompile Include="ModificarFunciones.cpp" />
+    <ClCompile Include="ModificarIndice.cpp" />
+    <ClCompile Include="ModificarProcedimeintos.cpp" />
+    <ClCompile Include="ModificarSecuencias.cpp" />
     <ClCompile Include="ModificarTabla.cpp" />
+    <ClCompile Include="ModificarTablas2.cpp" />
     <ClCompile Include="ModificarUsuario.cpp" />
     <ClCompile Include="ModificarVista.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -409,8 +437,29 @@
     <EmbeddedResource Include="Indices.resx">
       <DependentUpon>Indices.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificarDBspace.resx">
+      <DependentUpon>ModificarDBspace.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarDisparador.resx">
+      <DependentUpon>ModificarDisparador.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarFunciones.resx">
+      <DependentUpon>ModificarFunciones.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarIndice.resx">
+      <DependentUpon>ModificarIndice.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarProcedimeintos.resx">
+      <DependentUpon>ModificarProcedimeintos.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarSecuencias.resx">
+      <DependentUpon>ModificarSecuencias.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarTabla.resx">
       <DependentUpon>ModificarTabla.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarTablas2.resx">
+      <DependentUpon>ModificarTablas2.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarUsuario.resx">
       <DependentUpon>ModificarUsuario.h</DependentUpon>

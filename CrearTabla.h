@@ -493,7 +493,7 @@ namespace Proyecto_TDatabase {
 
 
 
-				//MessageBox::Show("Connection successful", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show("Tabla Creada exitosamente", "C++ Access Database Connector", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 			}
 			catch (Exception^ ex)
@@ -555,6 +555,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 	 LlaveFK = "";
 	 LlaveFK1 = "";
+	 NombreTabla->Text = "";
 
 }
 
@@ -646,7 +647,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 
 
-	//String^ a =codigoCreate + columnas + Primarikey;
+	String^ a = codigoCreate + columnas + Primarikey;
 	
 	Foranea->Enabled = true;
 	Origen->Enabled  = true;
@@ -670,7 +671,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 	if (Foraneaa->CompareTo("") != 0) 
 	{
-		LlaveFK1 = "FOREING KEY (" + Foraneaa + ") REFERENCES " + origenq;
+		LlaveFK1 = "FOREIGN KEY (" + Foraneaa + ") REFERENCES " + origenq;
 		if (LlaveFK->CompareTo("") != 0) {
 			LlaveFK = LlaveFK + ", " + LlaveFK1;
 		}

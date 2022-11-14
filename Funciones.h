@@ -2,6 +2,7 @@
 #include "CrearFunciones.h"
 #include "EliminarFuncion.h"
 #include "DDLFunciones.h"
+#include "ModificarFunciones.h"
 
 namespace Proyecto_TDatabase {
 
@@ -167,6 +168,7 @@ namespace Proyecto_TDatabase {
 			this->button4->TabIndex = 6;
 			this->button4->Text = L"Modificar funcion";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Funciones::button4_Click);
 			// 
 			// button5
 			// 
@@ -265,6 +267,15 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	this->Visible = false;
 	DDLFunciones^ cp = gcnew DDLFunciones(this, user, pas);
 	cp->Show();
+
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	ModificarFunciones^ cp = gcnew ModificarFunciones(this, user, pas);
+	cp->Show();
+
+
 
 }
 };

@@ -2,6 +2,8 @@
 #include "CrearProcedimiento.h"
 #include "EliminarProcedimiento.h"
 #include "DDLProcedi.h"
+#include "ModificarProcedimeintos.h"
+
 
 namespace Proyecto_TDatabase {
 
@@ -180,6 +182,7 @@ namespace Proyecto_TDatabase {
 			this->button5->TabIndex = 8;
 			this->button5->Text = L"Modificar Procedimiento";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Procedimientos::button5_Click);
 			// 
 			// Procedimientos
 			// 
@@ -274,6 +277,14 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	DDLProcedi^ cp = gcnew DDLProcedi(this, user, pas);
 	cp->Show();
 	
+
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Visible = false;
+	ModificarProcedimeintos^ cp = gcnew ModificarProcedimeintos(this, user, pas);
+	cp->Show();
+
 
 }
 };

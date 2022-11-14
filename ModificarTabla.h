@@ -597,6 +597,11 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		Origen->Enabled = false;
 	}
 
+
+	Renombrar->Enabled = false;
+	Eliminar->Enabled = false;
+
+
 }
 
 	   //eliminar
@@ -605,7 +610,6 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	if (Objeto->Text->CompareTo("Llave Primaria") == 0)
 	{
 		Columnas->Enabled = true;
-
 		NN->Enabled = false;
 		Origen->Enabled = false;
 
@@ -618,6 +622,9 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		NN->Enabled = false;
 		Origen->Enabled = false;
 
+
+
+
 	}
 	else if (Objeto->Text->CompareTo("Columna") == 0)
 	{
@@ -626,9 +633,11 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		NN->Enabled = false;
 		Origen->Enabled = false;
 
-		Renombrar->Enabled = false;
-		Agregar->Enabled = false;
+		
 	}
+
+	Renombrar->Enabled = false;
+	Agregar->Enabled = false;
 
 
 }
@@ -651,6 +660,10 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 		NN->Enabled = true;
 		Origen->Enabled = false;
 	}
+
+
+	Eliminar->Enabled = false;
+	Agregar->Enabled = false;
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -681,14 +694,14 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	{
 		if (Objeto->Text->CompareTo("Llave Primaria") == 0)
 		{
-			Accion_Ocurrir = "ALTER TABLE " + Tablas->Text + " DROP PRIMARY KEY( " + Columnas->Text + ");";
+			Accion_Ocurrir = "ALTER TABLE " + Tablas->Text + " DROP PRIMARY KEY(" + Columnas->Text + ");";
 			
 
 		}
 		else if (Objeto->Text->CompareTo("Llave Foranea") == 0)
 		{
 			
-			Accion_Ocurrir = "ALTER TABLE " + Tablas->Text + " DROP FOREING KEY( " + Columnas->Text + ");";
+			Accion_Ocurrir = "ALTER TABLE " + Tablas->Text + " DROP FOREING KEY(" + Columnas->Text + ");";
 			
 		}
 		else
@@ -701,7 +714,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	if (Renombrar->Enabled) 
 	{
 		if (Objeto->Text->CompareTo("Tabla") == 0) {
-			Accion_Ocurrir = "ALTER TABLE " + Tablas->Text + " RENAME " + Tablas->Text + " TO " + NN->Text;
+			Accion_Ocurrir = "ALTER TABLE " + Tablas->Text + " RENAME " + NN->Text;
 		}
 		else 
 		{
