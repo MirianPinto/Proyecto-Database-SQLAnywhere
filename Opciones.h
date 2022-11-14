@@ -116,7 +116,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button1->Location = System::Drawing::Point(174, 133);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(134, 36);
+			this->button1->Size = System::Drawing::Size(125, 37);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Tablas";
 			this->button1->UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button2->Location = System::Drawing::Point(174, 289);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(134, 36);
+			this->button2->Size = System::Drawing::Size(125, 37);
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"Procedimientos";
 			this->button2->UseVisualStyleBackColor = true;
@@ -134,9 +134,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(174, 340);
+			this->button3->Location = System::Drawing::Point(174, 339);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(134, 36);
+			this->button3->Size = System::Drawing::Size(125, 37);
 			this->button3->TabIndex = 3;
 			this->button3->Text = L"Funciones";
 			this->button3->UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button4->Location = System::Drawing::Point(174, 186);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(134, 36);
+			this->button4->Size = System::Drawing::Size(125, 37);
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"Vistas";
 			this->button4->UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button5->Location = System::Drawing::Point(174, 237);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(134, 36);
+			this->button5->Size = System::Drawing::Size(125, 37);
 			this->button5->TabIndex = 5;
 			this->button5->Text = L"Paquetes";
 			this->button5->UseVisualStyleBackColor = true;
@@ -165,7 +165,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button6->Location = System::Drawing::Point(339, 133);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(126, 36);
+			this->button6->Size = System::Drawing::Size(117, 37);
 			this->button6->TabIndex = 6;
 			this->button6->Text = L"Secuencias ";
 			this->button6->UseVisualStyleBackColor = true;
@@ -175,7 +175,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button7->Location = System::Drawing::Point(339, 237);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(126, 36);
+			this->button7->Size = System::Drawing::Size(117, 37);
 			this->button7->TabIndex = 7;
 			this->button7->Text = L"Disparadores";
 			this->button7->UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button8->Location = System::Drawing::Point(339, 289);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(126, 36);
+			this->button8->Size = System::Drawing::Size(117, 37);
 			this->button8->TabIndex = 8;
 			this->button8->Text = L"Indices";
 			this->button8->UseVisualStyleBackColor = true;
@@ -195,7 +195,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button9->Location = System::Drawing::Point(339, 186);
 			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(126, 36);
+			this->button9->Size = System::Drawing::Size(117, 37);
 			this->button9->TabIndex = 9;
 			this->button9->Text = L"Tablespaces";
 			this->button9->UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button10->Location = System::Drawing::Point(339, 340);
 			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(126, 36);
+			this->button10->Size = System::Drawing::Size(117, 37);
 			this->button10->TabIndex = 10;
 			this->button10->Text = L"Usuarios";
 			this->button10->UseVisualStyleBackColor = true;
@@ -225,7 +225,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button13->Location = System::Drawing::Point(174, 382);
 			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(134, 35);
+			this->button13->Size = System::Drawing::Size(125, 36);
 			this->button13->TabIndex = 13;
 			this->button13->Text = L"SQL";
 			this->button13->UseVisualStyleBackColor = true;

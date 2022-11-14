@@ -100,9 +100,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(201, 265);
+			this->button2->Location = System::Drawing::Point(200, 251);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(105, 43);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Eliminar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -121,15 +121,15 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Location = System::Drawing::Point(156, 166);
+			this->domainUpDown1->Location = System::Drawing::Point(179, 185);
 			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(120, 22);
+			this->domainUpDown1->Size = System::Drawing::Size(149, 22);
 			this->domainUpDown1->TabIndex = 3;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(176, 131);
+			this->label1->Location = System::Drawing::Point(176, 143);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(71, 16);
 			this->label1->TabIndex = 4;

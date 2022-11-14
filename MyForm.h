@@ -120,7 +120,7 @@ namespace Proyecto_TDatabase {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(36, 141);
+			this->dataGridView1->Location = System::Drawing::Point(43, 174);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(666, 295);
@@ -130,16 +130,17 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(204, 51);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label1->Location = System::Drawing::Point(317, 50);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(111, 16);
+			this->label1->Size = System::Drawing::Size(161, 25);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Nombre de tabla:";
 			// 
 			// domainUpDown1
 			// 
 			this->domainUpDown1->Items->Add(L"");
-			this->domainUpDown1->Location = System::Drawing::Point(338, 49);
+			this->domainUpDown1->Location = System::Drawing::Point(289, 92);
 			this->domainUpDown1->Name = L"domainUpDown1";
 			this->domainUpDown1->Size = System::Drawing::Size(223, 22);
 			this->domainUpDown1->TabIndex = 3;
@@ -147,9 +148,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(306, 95);
+			this->button1->Location = System::Drawing::Point(342, 126);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(130, 24);
+			this->button1->Size = System::Drawing::Size(93, 42);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -169,7 +170,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button2->Location = System::Drawing::Point(610, 12);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(118, 31);
+			this->button2->Size = System::Drawing::Size(118, 43);
 			this->button2->TabIndex = 7;
 			this->button2->Text = L"Crear Tabla";
 			this->button2->UseVisualStyleBackColor = true;
@@ -177,9 +178,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(610, 49);
+			this->button4->Location = System::Drawing::Point(610, 61);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(118, 32);
+			this->button4->Size = System::Drawing::Size(118, 38);
 			this->button4->TabIndex = 8;
 			this->button4->Text = L"Eliminar Tabla";
 			this->button4->UseVisualStyleBackColor = true;
@@ -187,9 +188,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(610, 88);
+			this->button5->Location = System::Drawing::Point(610, 105);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(118, 31);
+			this->button5->Size = System::Drawing::Size(118, 42);
 			this->button5->TabIndex = 9;
 			this->button5->Text = L"Modificar";
 			this->button5->UseVisualStyleBackColor = true;
@@ -197,7 +198,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(13, 74);
+			this->button6->Location = System::Drawing::Point(12, 126);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(150, 36);
 			this->button6->TabIndex = 10;
@@ -209,7 +210,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(757, 482);
+			this->ClientSize = System::Drawing::Size(763, 494);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);

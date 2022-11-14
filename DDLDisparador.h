@@ -133,11 +133,11 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(150, 83);
+			this->label1->Location = System::Drawing::Point(147, 83);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(216, 16);
+			this->label1->Size = System::Drawing::Size(254, 16);
 			this->label1->TabIndex = 13;
-			this->label1->Text = L"Elija el DDL de vista que quiere ver";
+			this->label1->Text = L"Elija el DDL de disparador que quiere ver";
 			// 
 			// button1
 			// 
@@ -153,7 +153,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(494, 411);
+			this->ClientSize = System::Drawing::Size(524, 410);
 			this->Controls->Add(this->Sentencia);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);

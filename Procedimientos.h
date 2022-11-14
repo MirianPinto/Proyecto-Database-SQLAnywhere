@@ -107,11 +107,11 @@ namespace Proyecto_TDatabase {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(39, 206);
+			this->dataGridView1->Location = System::Drawing::Point(28, 196);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(490, 224);
+			this->dataGridView1->Size = System::Drawing::Size(517, 224);
 			this->dataGridView1->TabIndex = 0;
 			// 
 			// label1
@@ -138,7 +138,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button2->Location = System::Drawing::Point(12, 12);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(99, 29);
+			this->button2->Size = System::Drawing::Size(98, 42);
 			this->button2->TabIndex = 4;
 			this->button2->Text = L"Regresar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -146,9 +146,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// CP
 			// 
-			this->CP->Location = System::Drawing::Point(407, 12);
+			this->CP->Location = System::Drawing::Point(421, 12);
 			this->CP->Name = L"CP";
-			this->CP->Size = System::Drawing::Size(150, 29);
+			this->CP->Size = System::Drawing::Size(136, 42);
 			this->CP->TabIndex = 5;
 			this->CP->Text = L"Crear Procedimiento";
 			this->CP->UseVisualStyleBackColor = true;
@@ -156,9 +156,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(407, 60);
+			this->button3->Location = System::Drawing::Point(421, 60);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(150, 45);
+			this->button3->Size = System::Drawing::Size(136, 45);
 			this->button3->TabIndex = 6;
 			this->button3->Text = L"Eliminar Procedimeinto";
 			this->button3->UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(13, 109);
+			this->button4->Location = System::Drawing::Point(12, 134);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(98, 43);
 			this->button4->TabIndex = 7;
@@ -176,9 +176,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(407, 127);
+			this->button5->Location = System::Drawing::Point(421, 111);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(150, 50);
+			this->button5->Size = System::Drawing::Size(136, 50);
 			this->button5->TabIndex = 8;
 			this->button5->Text = L"Modificar Procedimiento";
 			this->button5->UseVisualStyleBackColor = true;

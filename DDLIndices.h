@@ -152,7 +152,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(491, 400);
+			this->ClientSize = System::Drawing::Size(509, 396);
 			this->Controls->Add(this->Sentencia);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);

@@ -108,16 +108,16 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Location = System::Drawing::Point(213, 142);
+			this->domainUpDown1->Location = System::Drawing::Point(196, 142);
 			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(120, 22);
+			this->domainUpDown1->Size = System::Drawing::Size(155, 22);
 			this->domainUpDown1->TabIndex = 2;
 			this->domainUpDown1->SelectedItemChanged += gcnew System::EventHandler(this, &ModificarIndice::domainUpDown1_SelectedItemChanged);
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(495, 29);
+			this->dataGridView1->Location = System::Drawing::Point(555, 12);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
@@ -128,9 +128,10 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->label1->Location = System::Drawing::Point(210, 107);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(98, 16);
+			this->label1->Size = System::Drawing::Size(125, 20);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Indice a alterar:";
 			// 
@@ -154,6 +155,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"ModificarIndice";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ModificarIndice";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

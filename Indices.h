@@ -154,7 +154,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(433, 54);
+			this->button4->Location = System::Drawing::Point(434, 54);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(115, 40);
 			this->button4->TabIndex = 5;
@@ -164,9 +164,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(433, 111);
+			this->button5->Location = System::Drawing::Point(434, 105);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(116, 32);
+			this->button5->Size = System::Drawing::Size(116, 38);
 			this->button5->TabIndex = 6;
 			this->button5->Text = L"Modificar Indice";
 			this->button5->UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(12, 69);
+			this->button6->Location = System::Drawing::Point(13, 128);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(114, 34);
 			this->button6->TabIndex = 7;

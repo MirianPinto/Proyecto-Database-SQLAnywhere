@@ -110,9 +110,10 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(312, 50);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label1->Location = System::Drawing::Point(287, 52);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(131, 16);
+			this->label1->Size = System::Drawing::Size(166, 20);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Escriba la sentencia:";
 			// 
@@ -137,9 +138,10 @@ namespace Proyecto_TDatabase {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
 			this->label2->Location = System::Drawing::Point(344, 276);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(72, 16);
+			this->label2->Size = System::Drawing::Size(89, 20);
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"Resultado:";
 			// 
@@ -166,6 +168,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
 			this->Name = L"SQL";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"SQL";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

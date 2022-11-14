@@ -96,9 +96,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(174, 241);
+			this->button2->Location = System::Drawing::Point(199, 247);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(95, 41);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Eliminar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -106,15 +106,15 @@ namespace Proyecto_TDatabase {
 			// 
 			// users
 			// 
-			this->users->Location = System::Drawing::Point(159, 155);
+			this->users->Location = System::Drawing::Point(159, 173);
 			this->users->Name = L"users";
-			this->users->Size = System::Drawing::Size(120, 22);
+			this->users->Size = System::Drawing::Size(157, 22);
 			this->users->TabIndex = 2;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(156, 122);
+			this->label1->Location = System::Drawing::Point(156, 129);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(54, 16);
 			this->label1->TabIndex = 3;

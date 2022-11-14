@@ -138,7 +138,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->NT->Location = System::Drawing::Point(29, 105);
 			this->NT->Name = L"NT";
-			this->NT->Size = System::Drawing::Size(100, 22);
+			this->NT->Size = System::Drawing::Size(116, 22);
 			this->NT->TabIndex = 2;
 			// 
 			// NTabla
@@ -167,14 +167,14 @@ namespace Proyecto_TDatabase {
 			this->Accion->Items->Add(L"En lugar");
 			this->Accion->Location = System::Drawing::Point(115, 184);
 			this->Accion->Name = L"Accion";
-			this->Accion->Size = System::Drawing::Size(120, 22);
+			this->Accion->Size = System::Drawing::Size(133, 22);
 			this->Accion->TabIndex = 6;
 			// 
 			// Tablas
 			// 
-			this->Tablas->Location = System::Drawing::Point(446, 106);
+			this->Tablas->Location = System::Drawing::Point(425, 106);
 			this->Tablas->Name = L"Tablas";
-			this->Tablas->Size = System::Drawing::Size(120, 22);
+			this->Tablas->Size = System::Drawing::Size(141, 22);
 			this->Tablas->TabIndex = 7;
 			// 
 			// Event
@@ -184,7 +184,7 @@ namespace Proyecto_TDatabase {
 			this->Event->Items->Add(L"Eliminar");
 			this->Event->Location = System::Drawing::Point(342, 184);
 			this->Event->Name = L"Event";
-			this->Event->Size = System::Drawing::Size(120, 22);
+			this->Event->Size = System::Drawing::Size(142, 22);
 			this->Event->TabIndex = 8;
 			// 
 			// label3
@@ -218,9 +218,9 @@ namespace Proyecto_TDatabase {
 			// 
 			this->Nivel->Items->Add(L"Nivel de Fila");
 			this->Nivel->Items->Add(L"Nivel de instruccion");
-			this->Nivel->Location = System::Drawing::Point(238, 106);
+			this->Nivel->Location = System::Drawing::Point(221, 106);
 			this->Nivel->Name = L"Nivel";
-			this->Nivel->Size = System::Drawing::Size(120, 22);
+			this->Nivel->Size = System::Drawing::Size(137, 22);
 			this->Nivel->TabIndex = 12;
 			// 
 			// SQL

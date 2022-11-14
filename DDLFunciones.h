@@ -134,9 +134,9 @@ namespace Proyecto_TDatabase {
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(138, 83);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(277, 16);
+			this->label1->Size = System::Drawing::Size(249, 16);
 			this->label1->TabIndex = 25;
-			this->label1->Text = L"Elija el DDL del procedimiento que quiere ver";
+			this->label1->Text = L"Elija el DDL de la Funcion que quiere ver";
 			// 
 			// button1
 			// 

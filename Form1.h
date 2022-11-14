@@ -98,9 +98,9 @@ namespace CppCLRWinFormsProject {
 			this->button1->AccessibleName = L"";
 			this->button1->Cursor = System::Windows::Forms::Cursors::Default;
 			this->button1->Enabled = false;
-			this->button1->Location = System::Drawing::Point(249, 375);
+			this->button1->Location = System::Drawing::Point(246, 373);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(87, 37);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Iniciar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@ namespace CppCLRWinFormsProject {
 			// textBox1
 			// 
 			this->textBox1->Enabled = false;
-			this->textBox1->Location = System::Drawing::Point(213, 347);
+			this->textBox1->Location = System::Drawing::Point(211, 333);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->PasswordChar = '*';
 			this->textBox1->Size = System::Drawing::Size(155, 22);
@@ -119,9 +119,10 @@ namespace CppCLRWinFormsProject {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(246, 328);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8));
+			this->label1->Location = System::Drawing::Point(243, 304);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(76, 16);
+			this->label1->Size = System::Drawing::Size(81, 17);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Contraseña";
 			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
@@ -129,9 +130,10 @@ namespace CppCLRWinFormsProject {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(30, 97);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label2->Location = System::Drawing::Point(28, 66);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(78, 16);
+			this->label2->Size = System::Drawing::Size(117, 25);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Conexiones";
 			this->label2->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
@@ -141,7 +143,7 @@ namespace CppCLRWinFormsProject {
 			this->Conexiones->AutoScroll = true;
 			this->Conexiones->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->Conexiones->CausesValidation = false;
-			this->Conexiones->Location = System::Drawing::Point(33, 130);
+			this->Conexiones->Location = System::Drawing::Point(33, 105);
 			this->Conexiones->Name = L"Conexiones";
 			this->Conexiones->Size = System::Drawing::Size(486, 174);
 			this->Conexiones->TabIndex = 5;
@@ -161,19 +163,19 @@ namespace CppCLRWinFormsProject {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(332, 8);
+			this->dataGridView1->Location = System::Drawing::Point(461, 8);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(249, 105);
+			this->dataGridView1->Size = System::Drawing::Size(120, 40);
 			this->dataGridView1->TabIndex = 6;
 			this->dataGridView1->Visible = false;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(446, 89);
+			this->button3->Location = System::Drawing::Point(442, 64);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->Size = System::Drawing::Size(99, 35);
 			this->button3->TabIndex = 7;
 			this->button3->Text = L"Actualizar";
 			this->button3->UseVisualStyleBackColor = true;

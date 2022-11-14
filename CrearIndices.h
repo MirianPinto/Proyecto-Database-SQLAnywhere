@@ -135,7 +135,7 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(80, 186);
+			this->label1->Location = System::Drawing::Point(69, 197);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(56, 16);
 			this->label1->TabIndex = 2;
@@ -143,15 +143,15 @@ namespace Proyecto_TDatabase {
 			// 
 			// NI
 			// 
-			this->NI->Location = System::Drawing::Point(83, 239);
+			this->NI->Location = System::Drawing::Point(72, 229);
 			this->NI->Name = L"NI";
-			this->NI->Size = System::Drawing::Size(100, 22);
+			this->NI->Size = System::Drawing::Size(111, 22);
 			this->NI->TabIndex = 3;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(250, 185);
+			this->label2->Location = System::Drawing::Point(229, 197);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(43, 16);
 			this->label2->TabIndex = 5;
@@ -159,16 +159,16 @@ namespace Proyecto_TDatabase {
 			// 
 			// Tablas
 			// 
-			this->Tablas->Location = System::Drawing::Point(240, 239);
+			this->Tablas->Location = System::Drawing::Point(232, 229);
 			this->Tablas->Name = L"Tablas";
-			this->Tablas->Size = System::Drawing::Size(120, 22);
+			this->Tablas->Size = System::Drawing::Size(138, 22);
 			this->Tablas->TabIndex = 6;
 			this->Tablas->SelectedItemChanged += gcnew System::EventHandler(this, &CrearIndices::Tablas_SelectedItemChanged);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(431, 186);
+			this->label4->Location = System::Drawing::Point(404, 197);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(60, 16);
 			this->label4->TabIndex = 13;
@@ -187,9 +187,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// Columnas
 			// 
-			this->Columnas->Location = System::Drawing::Point(413, 239);
+			this->Columnas->Location = System::Drawing::Point(407, 230);
 			this->Columnas->Name = L"Columnas";
-			this->Columnas->Size = System::Drawing::Size(120, 22);
+			this->Columnas->Size = System::Drawing::Size(136, 22);
 			this->Columnas->TabIndex = 15;
 			// 
 			// CrearIndices

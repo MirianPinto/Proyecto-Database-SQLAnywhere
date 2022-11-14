@@ -125,9 +125,9 @@ namespace Proyecto_TDatabase {
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(138, 83);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(227, 16);
+			this->label1->Size = System::Drawing::Size(263, 16);
 			this->label1->TabIndex = 37;
-			this->label1->Text = L"Elija el DDL del indice que quiere ver";
+			this->label1->Text = L"Elija el DDL de los Usuarios que quiere ver";
 			// 
 			// button1
 			// 

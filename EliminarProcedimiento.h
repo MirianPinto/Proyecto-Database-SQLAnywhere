@@ -92,15 +92,15 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Location = System::Drawing::Point(147, 156);
+			this->domainUpDown1->Location = System::Drawing::Point(147, 165);
 			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(128, 22);
+			this->domainUpDown1->Size = System::Drawing::Size(159, 22);
 			this->domainUpDown1->TabIndex = 1;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(144, 118);
+			this->label1->Location = System::Drawing::Point(144, 130);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(94, 16);
 			this->label1->TabIndex = 2;
@@ -108,9 +108,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(160, 240);
+			this->button2->Location = System::Drawing::Point(179, 238);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(107, 32);
+			this->button2->Size = System::Drawing::Size(103, 43);
 			this->button2->TabIndex = 3;
 			this->button2->Text = L"Eliminar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@ namespace Proyecto_TDatabase {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(229, 45);
+			this->dataGridView1->Location = System::Drawing::Point(417, 13);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;

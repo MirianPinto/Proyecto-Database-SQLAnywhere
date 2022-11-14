@@ -164,9 +164,9 @@ namespace Proyecto_TDatabase {
 			// button4
 			// 
 			this->button4->Enabled = false;
-			this->button4->Location = System::Drawing::Point(328, 211);
+			this->button4->Location = System::Drawing::Point(326, 209);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(100, 36);
+			this->button4->Size = System::Drawing::Size(105, 38);
 			this->button4->TabIndex = 7;
 			this->button4->Text = L"Editar";
 			this->button4->UseVisualStyleBackColor = true;

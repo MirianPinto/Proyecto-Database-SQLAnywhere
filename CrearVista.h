@@ -136,7 +136,7 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(387, 118);
+			this->label1->Location = System::Drawing::Point(349, 135);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(117, 16);
 			this->label1->TabIndex = 4;

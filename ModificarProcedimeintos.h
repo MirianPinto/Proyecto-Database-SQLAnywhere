@@ -100,7 +100,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(268, 427);
+			this->button2->Location = System::Drawing::Point(248, 427);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(98, 45);
 			this->button2->TabIndex = 1;
@@ -110,7 +110,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Location = System::Drawing::Point(209, 107);
+			this->domainUpDown1->Location = System::Drawing::Point(209, 111);
 			this->domainUpDown1->Name = L"domainUpDown1";
 			this->domainUpDown1->Size = System::Drawing::Size(183, 22);
 			this->domainUpDown1->TabIndex = 2;
@@ -128,9 +128,10 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(220, 77);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label1->Location = System::Drawing::Point(209, 73);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(146, 16);
+			this->label1->Size = System::Drawing::Size(183, 20);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Procedimiento a alterar";
 			// 
@@ -157,6 +158,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"ModificarProcedimeintos";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ModificarProcedimeintos";
 			this->Load += gcnew System::EventHandler(this, &ModificarProcedimeintos::ModificarProcedimeintos_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();

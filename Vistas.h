@@ -166,7 +166,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(514, 66);
+			this->button3->Location = System::Drawing::Point(514, 73);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(107, 37);
 			this->button3->TabIndex = 7;

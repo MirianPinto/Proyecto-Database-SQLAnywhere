@@ -102,9 +102,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(134, 227);
+			this->button2->Location = System::Drawing::Point(132, 202);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(92, 43);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Eliminar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -112,9 +112,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Location = System::Drawing::Point(119, 130);
+			this->domainUpDown1->Location = System::Drawing::Point(106, 139);
 			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(120, 22);
+			this->domainUpDown1->Size = System::Drawing::Size(145, 22);
 			this->domainUpDown1->TabIndex = 2;
 			// 
 			// dataGridView1
@@ -131,7 +131,7 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(119, 85);
+			this->label1->Location = System::Drawing::Point(103, 111);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(43, 16);
 			this->label1->TabIndex = 4;

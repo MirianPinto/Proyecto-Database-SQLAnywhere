@@ -101,9 +101,10 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(219, 62);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label1->Location = System::Drawing::Point(218, 73);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(80, 16);
+			this->label1->Size = System::Drawing::Size(101, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"DBSPACES";
 			// 
@@ -119,9 +120,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(212, 99);
+			this->button2->Location = System::Drawing::Point(222, 114);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 30);
+			this->button2->Size = System::Drawing::Size(88, 44);
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"Buscar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -130,18 +131,18 @@ namespace Proyecto_TDatabase {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(13, 154);
+			this->dataGridView1->Location = System::Drawing::Point(36, 178);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(505, 271);
+			this->dataGridView1->Size = System::Drawing::Size(465, 259);
 			this->dataGridView1->TabIndex = 3;
 			// 
 			// CD
 			// 
-			this->CD->Location = System::Drawing::Point(382, 13);
+			this->CD->Location = System::Drawing::Point(418, 12);
 			this->CD->Name = L"CD";
-			this->CD->Size = System::Drawing::Size(119, 31);
+			this->CD->Size = System::Drawing::Size(101, 43);
 			this->CD->TabIndex = 4;
 			this->CD->Text = L"Crear dbspace";
 			this->CD->UseVisualStyleBackColor = true;
@@ -149,9 +150,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(382, 50);
+			this->button3->Location = System::Drawing::Point(418, 61);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(119, 47);
+			this->button3->Size = System::Drawing::Size(101, 47);
 			this->button3->TabIndex = 5;
 			this->button3->Text = L"Eliminar dbspace";
 			this->button3->UseVisualStyleBackColor = true;
@@ -159,16 +160,16 @@ namespace Proyecto_TDatabase {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(382, 104);
+			this->button4->Location = System::Drawing::Point(418, 114);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(119, 44);
+			this->button4->Size = System::Drawing::Size(101, 44);
 			this->button4->TabIndex = 6;
 			this->button4->Text = L"Modificar Dbspaces";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(13, 73);
+			this->button5->Location = System::Drawing::Point(12, 119);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(89, 35);
 			this->button5->TabIndex = 7;
@@ -180,7 +181,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(530, 437);
+			this->ClientSize = System::Drawing::Size(531, 458);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);

@@ -131,9 +131,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Location = System::Drawing::Point(43, 112);
+			this->domainUpDown1->Location = System::Drawing::Point(34, 112);
 			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(120, 22);
+			this->domainUpDown1->Size = System::Drawing::Size(129, 22);
 			this->domainUpDown1->TabIndex = 3;
 			// 
 			// Opcion
@@ -224,6 +224,7 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"ModificarUsuario";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ModificarUsuario";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

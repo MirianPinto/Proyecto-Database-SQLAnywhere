@@ -131,7 +131,7 @@ namespace Proyecto_TDatabase {
 			// NS
 			// 
 			this->NS->AutoSize = true;
-			this->NS->Location = System::Drawing::Point(73, 124);
+			this->NS->Location = System::Drawing::Point(135, 116);
 			this->NS->Name = L"NS";
 			this->NS->Size = System::Drawing::Size(56, 16);
 			this->NS->TabIndex = 1;
@@ -139,7 +139,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// TEXTNS
 			// 
-			this->TEXTNS->Location = System::Drawing::Point(73, 159);
+			this->TEXTNS->Location = System::Drawing::Point(135, 151);
 			this->TEXTNS->Name = L"TEXTNS";
 			this->TEXTNS->Size = System::Drawing::Size(100, 22);
 			this->TEXTNS->TabIndex = 2;
@@ -147,7 +147,7 @@ namespace Proyecto_TDatabase {
 			// Inc
 			// 
 			this->Inc->AutoSize = true;
-			this->Inc->Location = System::Drawing::Point(401, 124);
+			this->Inc->Location = System::Drawing::Point(489, 116);
 			this->Inc->Name = L"Inc";
 			this->Inc->Size = System::Drawing::Size(94, 16);
 			this->Inc->TabIndex = 3;
@@ -155,7 +155,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// INCRE
 			// 
-			this->INCRE->Location = System::Drawing::Point(401, 156);
+			this->INCRE->Location = System::Drawing::Point(492, 151);
 			this->INCRE->Name = L"INCRE";
 			this->INCRE->Size = System::Drawing::Size(120, 22);
 			this->INCRE->TabIndex = 4;
@@ -163,7 +163,7 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(157, 224);
+			this->label1->Location = System::Drawing::Point(202, 234);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(86, 16);
 			this->label1->TabIndex = 5;
@@ -172,7 +172,7 @@ namespace Proyecto_TDatabase {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(323, 224);
+			this->label2->Location = System::Drawing::Point(368, 234);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(90, 16);
 			this->label2->TabIndex = 6;
@@ -180,21 +180,21 @@ namespace Proyecto_TDatabase {
 			// 
 			// MAXV
 			// 
-			this->MAXV->Location = System::Drawing::Point(326, 253);
+			this->MAXV->Location = System::Drawing::Point(371, 263);
 			this->MAXV->Name = L"MAXV";
 			this->MAXV->Size = System::Drawing::Size(120, 22);
 			this->MAXV->TabIndex = 7;
 			// 
 			// mV
 			// 
-			this->mV->Location = System::Drawing::Point(160, 253);
+			this->mV->Location = System::Drawing::Point(205, 263);
 			this->mV->Name = L"mV";
 			this->mV->Size = System::Drawing::Size(120, 22);
 			this->mV->TabIndex = 8;
 			// 
 			// INICO
 			// 
-			this->INICO->Location = System::Drawing::Point(239, 160);
+			this->INICO->Location = System::Drawing::Point(301, 152);
 			this->INICO->Name = L"INICO";
 			this->INICO->Size = System::Drawing::Size(120, 22);
 			this->INICO->TabIndex = 9;
@@ -202,7 +202,7 @@ namespace Proyecto_TDatabase {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(249, 124);
+			this->label3->Location = System::Drawing::Point(311, 116);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(92, 16);
 			this->label3->TabIndex = 10;

@@ -142,7 +142,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// CF
 			// 
-			this->CF->Location = System::Drawing::Point(403, 13);
+			this->CF->Location = System::Drawing::Point(440, 13);
 			this->CF->Name = L"CF";
 			this->CF->Size = System::Drawing::Size(130, 34);
 			this->CF->TabIndex = 4;
@@ -152,7 +152,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(403, 65);
+			this->button3->Location = System::Drawing::Point(440, 65);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(130, 42);
 			this->button3->TabIndex = 5;
@@ -162,7 +162,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(403, 127);
+			this->button4->Location = System::Drawing::Point(440, 127);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(130, 37);
 			this->button4->TabIndex = 6;
@@ -172,7 +172,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(13, 87);
+			this->button5->Location = System::Drawing::Point(12, 157);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(106, 37);
 			this->button5->TabIndex = 7;

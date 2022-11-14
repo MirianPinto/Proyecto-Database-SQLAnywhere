@@ -102,7 +102,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(121, 209);
+			this->button2->Location = System::Drawing::Point(153, 199);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(89, 31);
 			this->button2->TabIndex = 1;
@@ -112,9 +112,9 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Location = System::Drawing::Point(110, 141);
+			this->domainUpDown1->Location = System::Drawing::Point(121, 140);
 			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(120, 22);
+			this->domainUpDown1->Size = System::Drawing::Size(145, 22);
 			this->domainUpDown1->TabIndex = 2;
 			// 
 			// label1
@@ -141,7 +141,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(361, 297);
+			this->ClientSize = System::Drawing::Size(385, 300);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->domainUpDown1);

@@ -147,7 +147,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->CD->Location = System::Drawing::Point(455, 13);
 			this->CD->Name = L"CD";
-			this->CD->Size = System::Drawing::Size(132, 35);
+			this->CD->Size = System::Drawing::Size(132, 53);
 			this->CD->TabIndex = 4;
 			this->CD->Text = L"Crear Disparador";
 			this->CD->UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(455, 55);
+			this->button3->Location = System::Drawing::Point(455, 72);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(132, 53);
 			this->button3->TabIndex = 5;
@@ -167,7 +167,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->button4->Location = System::Drawing::Point(455, 135);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(132, 45);
+			this->button4->Size = System::Drawing::Size(132, 54);
 			this->button4->TabIndex = 6;
 			this->button4->Text = L"Modificar DIsparador";
 			this->button4->UseVisualStyleBackColor = true;

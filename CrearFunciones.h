@@ -155,7 +155,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// Crear
 			// 
-			this->Crear->Location = System::Drawing::Point(513, 382);
+			this->Crear->Location = System::Drawing::Point(513, 409);
 			this->Crear->Name = L"Crear";
 			this->Crear->Size = System::Drawing::Size(106, 43);
 			this->Crear->TabIndex = 1;
@@ -196,7 +196,7 @@ namespace Proyecto_TDatabase {
 			this->VRE->Items->Add(L"varchar");
 			this->VRE->Location = System::Drawing::Point(45, 180);
 			this->VRE->Name = L"VRE";
-			this->VRE->Size = System::Drawing::Size(120, 22);
+			this->VRE->Size = System::Drawing::Size(136, 22);
 			this->VRE->TabIndex = 5;
 			// 
 			// label3
@@ -221,19 +221,19 @@ namespace Proyecto_TDatabase {
 			// 
 			this->size1->Location = System::Drawing::Point(220, 180);
 			this->size1->Name = L"size1";
-			this->size1->Size = System::Drawing::Size(120, 22);
+			this->size1->Size = System::Drawing::Size(129, 22);
 			this->size1->TabIndex = 8;
 			// 
 			// Scala1
 			// 
 			this->Scala1->Location = System::Drawing::Point(369, 180);
 			this->Scala1->Name = L"Scala1";
-			this->Scala1->Size = System::Drawing::Size(120, 22);
+			this->Scala1->Size = System::Drawing::Size(133, 22);
 			this->Scala1->TabIndex = 9;
 			// 
 			// Funcion
 			// 
-			this->Funcion->Location = System::Drawing::Point(45, 320);
+			this->Funcion->Location = System::Drawing::Point(45, 342);
 			this->Funcion->Multiline = true;
 			this->Funcion->Name = L"Funcion";
 			this->Funcion->Size = System::Drawing::Size(196, 175);
@@ -242,7 +242,7 @@ namespace Proyecto_TDatabase {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(61, 287);
+			this->label2->Location = System::Drawing::Point(61, 309);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(54, 16);
 			this->label2->TabIndex = 11;
@@ -269,7 +269,7 @@ namespace Proyecto_TDatabase {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(51, 209);
+			this->label5->Location = System::Drawing::Point(51, 227);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(77, 16);
 			this->label5->TabIndex = 14;
@@ -278,7 +278,7 @@ namespace Proyecto_TDatabase {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(217, 209);
+			this->label6->Location = System::Drawing::Point(187, 227);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(36, 16);
 			this->label6->TabIndex = 15;
@@ -287,7 +287,7 @@ namespace Proyecto_TDatabase {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(369, 209);
+			this->label7->Location = System::Drawing::Point(357, 227);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(58, 16);
 			this->label7->TabIndex = 16;
@@ -296,7 +296,7 @@ namespace Proyecto_TDatabase {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(493, 209);
+			this->label8->Location = System::Drawing::Point(510, 228);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(49, 16);
 			this->label8->TabIndex = 17;
@@ -304,21 +304,21 @@ namespace Proyecto_TDatabase {
 			// 
 			// Npara
 			// 
-			this->Npara->Location = System::Drawing::Point(45, 229);
+			this->Npara->Location = System::Drawing::Point(45, 247);
 			this->Npara->Name = L"Npara";
-			this->Npara->Size = System::Drawing::Size(100, 22);
+			this->Npara->Size = System::Drawing::Size(125, 22);
 			this->Npara->TabIndex = 18;
 			// 
 			// size
 			// 
-			this->size->Location = System::Drawing::Point(347, 228);
+			this->size->Location = System::Drawing::Point(359, 247);
 			this->size->Name = L"size";
 			this->size->Size = System::Drawing::Size(120, 22);
 			this->size->TabIndex = 19;
 			// 
 			// scala
 			// 
-			this->scala->Location = System::Drawing::Point(485, 228);
+			this->scala->Location = System::Drawing::Point(513, 247);
 			this->scala->Name = L"scala";
 			this->scala->Size = System::Drawing::Size(120, 22);
 			this->scala->TabIndex = 20;
@@ -329,14 +329,14 @@ namespace Proyecto_TDatabase {
 			this->Data->Items->Add(L"numeric");
 			this->Data->Items->Add(L"char");
 			this->Data->Items->Add(L"varchar");
-			this->Data->Location = System::Drawing::Point(190, 228);
+			this->Data->Location = System::Drawing::Point(190, 246);
 			this->Data->Name = L"Data";
-			this->Data->Size = System::Drawing::Size(120, 22);
+			this->Data->Size = System::Drawing::Size(130, 22);
 			this->Data->TabIndex = 21;
 			// 
 			// AP
 			// 
-			this->AP->Location = System::Drawing::Point(250, 268);
+			this->AP->Location = System::Drawing::Point(256, 290);
 			this->AP->Name = L"AP";
 			this->AP->Size = System::Drawing::Size(144, 35);
 			this->AP->TabIndex = 22;
@@ -347,7 +347,7 @@ namespace Proyecto_TDatabase {
 			// parametro
 			// 
 			this->parametro->Enabled = false;
-			this->parametro->Location = System::Drawing::Point(268, 320);
+			this->parametro->Location = System::Drawing::Point(268, 342);
 			this->parametro->Multiline = true;
 			this->parametro->Name = L"parametro";
 			this->parametro->Size = System::Drawing::Size(211, 175);
@@ -357,7 +357,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(663, 510);
+			this->ClientSize = System::Drawing::Size(716, 529);
 			this->Controls->Add(this->parametro);
 			this->Controls->Add(this->AP);
 			this->Controls->Add(this->Data);

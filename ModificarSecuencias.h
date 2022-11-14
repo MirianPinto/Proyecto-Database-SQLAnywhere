@@ -98,7 +98,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(230, 412);
+			this->button2->Location = System::Drawing::Point(239, 429);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(89, 39);
 			this->button2->TabIndex = 1;
@@ -108,7 +108,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Location = System::Drawing::Point(187, 142);
+			this->domainUpDown1->Location = System::Drawing::Point(187, 138);
 			this->domainUpDown1->Name = L"domainUpDown1";
 			this->domainUpDown1->Size = System::Drawing::Size(187, 22);
 			this->domainUpDown1->TabIndex = 2;
@@ -128,21 +128,23 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(210, 107);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label1->Location = System::Drawing::Point(198, 95);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(130, 16);
+			this->label1->Size = System::Drawing::Size(164, 20);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Disparador a alterar:";
 			// 
 			// Alterar
 			// 
-			this->Alterar->Location = System::Drawing::Point(79, 180);
+			this->Alterar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->Alterar->Location = System::Drawing::Point(69, 180);
 			this->Alterar->Multiline = true;
 			this->Alterar->Name = L"Alterar";
-			this->Alterar->Size = System::Drawing::Size(411, 214);
+			this->Alterar->Size = System::Drawing::Size(432, 226);
 			this->Alterar->TabIndex = 5;
 			// 
-			// ModificarDisparador
+			// ModificarSecuencias
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -153,7 +155,8 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->domainUpDown1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Name = L"ModificarDisparador";
+			this->Name = L"ModificarSecuencias";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ModificarIndice";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

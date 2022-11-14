@@ -142,7 +142,7 @@ namespace Proyecto_TDatabase {
 			this->Alterar->Size = System::Drawing::Size(411, 214);
 			this->Alterar->TabIndex = 5;
 			// 
-			// ModificarDisparador
+			// ModificarTablas2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -153,7 +153,8 @@ namespace Proyecto_TDatabase {
 			this->Controls->Add(this->domainUpDown1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Name = L"ModificarDisparador";
+			this->Name = L"ModificarTablas2";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ModificarIndice";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

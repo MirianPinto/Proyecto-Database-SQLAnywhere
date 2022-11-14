@@ -168,7 +168,7 @@ namespace Proyecto_TDatabase {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(68, 78);
+			this->label1->Location = System::Drawing::Point(71, 72);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(111, 16);
 			this->label1->TabIndex = 1;
@@ -185,7 +185,7 @@ namespace Proyecto_TDatabase {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(68, 146);
+			this->label2->Location = System::Drawing::Point(70, 162);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(129, 16);
 			this->label2->TabIndex = 3;
@@ -194,7 +194,7 @@ namespace Proyecto_TDatabase {
 			// Columnas
 			// 
 			this->Columnas->Enabled = false;
-			this->Columnas->Location = System::Drawing::Point(54, 177);
+			this->Columnas->Location = System::Drawing::Point(54, 190);
 			this->Columnas->Name = L"Columnas";
 			this->Columnas->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->Columnas->Size = System::Drawing::Size(162, 22);
@@ -215,7 +215,7 @@ namespace Proyecto_TDatabase {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(246, 146);
+			this->label3->Location = System::Drawing::Point(250, 162);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(35, 16);
 			this->label3->TabIndex = 6;
@@ -224,7 +224,7 @@ namespace Proyecto_TDatabase {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(491, 146);
+			this->label4->Location = System::Drawing::Point(491, 162);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(54, 16);
 			this->label4->TabIndex = 7;
@@ -233,7 +233,7 @@ namespace Proyecto_TDatabase {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(551, 146);
+			this->label5->Location = System::Drawing::Point(551, 162);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(78, 16);
 			this->label5->TabIndex = 8;
@@ -242,7 +242,7 @@ namespace Proyecto_TDatabase {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(85, 274);
+			this->label6->Location = System::Drawing::Point(105, 290);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(94, 16);
 			this->label6->TabIndex = 9;
@@ -251,7 +251,7 @@ namespace Proyecto_TDatabase {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(274, 274);
+			this->label7->Location = System::Drawing::Point(294, 290);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(47, 16);
 			this->label7->TabIndex = 10;
@@ -261,7 +261,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->NN->AutoSize = true;
 			this->NN->Enabled = false;
-			this->NN->Location = System::Drawing::Point(506, 176);
+			this->NN->Location = System::Drawing::Point(515, 194);
 			this->NN->Name = L"NN";
 			this->NN->Size = System::Drawing::Size(18, 17);
 			this->NN->TabIndex = 11;
@@ -271,7 +271,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->PK->AutoSize = true;
 			this->PK->Enabled = false;
-			this->PK->Location = System::Drawing::Point(580, 175);
+			this->PK->Location = System::Drawing::Point(582, 193);
 			this->PK->Name = L"PK";
 			this->PK->Size = System::Drawing::Size(18, 17);
 			this->PK->TabIndex = 12;
@@ -280,7 +280,7 @@ namespace Proyecto_TDatabase {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(635, 146);
+			this->label8->Location = System::Drawing::Point(635, 162);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(50, 16);
 			this->label8->TabIndex = 13;
@@ -290,7 +290,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->Uni->AutoSize = true;
 			this->Uni->Enabled = false;
-			this->Uni->Location = System::Drawing::Point(650, 176);
+			this->Uni->Location = System::Drawing::Point(653, 193);
 			this->Uni->Name = L"Uni";
 			this->Uni->Size = System::Drawing::Size(18, 17);
 			this->Uni->TabIndex = 14;
@@ -304,7 +304,7 @@ namespace Proyecto_TDatabase {
 			this->Tipo->Items->Add(L"date");
 			this->Tipo->Items->Add(L"int");
 			this->Tipo->Items->Add(L"numeric");
-			this->Tipo->Location = System::Drawing::Point(235, 176);
+			this->Tipo->Location = System::Drawing::Point(238, 190);
 			this->Tipo->Name = L"Tipo";
 			this->Tipo->Size = System::Drawing::Size(73, 22);
 			this->Tipo->TabIndex = 15;
@@ -312,7 +312,7 @@ namespace Proyecto_TDatabase {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(342, 146);
+			this->label9->Location = System::Drawing::Point(342, 162);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(130, 16);
 			this->label9->TabIndex = 16;
@@ -321,7 +321,7 @@ namespace Proyecto_TDatabase {
 			// size
 			// 
 			this->size->Enabled = false;
-			this->size->Location = System::Drawing::Point(345, 175);
+			this->size->Location = System::Drawing::Point(345, 189);
 			this->size->Name = L"size";
 			this->size->Size = System::Drawing::Size(45, 22);
 			this->size->TabIndex = 17;
@@ -329,7 +329,7 @@ namespace Proyecto_TDatabase {
 			// scala
 			// 
 			this->scala->Enabled = false;
-			this->scala->Location = System::Drawing::Point(426, 176);
+			this->scala->Location = System::Drawing::Point(430, 189);
 			this->scala->Name = L"scala";
 			this->scala->Size = System::Drawing::Size(42, 22);
 			this->scala->TabIndex = 18;
@@ -337,7 +337,7 @@ namespace Proyecto_TDatabase {
 			// Foranea
 			// 
 			this->Foranea->Enabled = false;
-			this->Foranea->Location = System::Drawing::Point(54, 304);
+			this->Foranea->Location = System::Drawing::Point(74, 320);
 			this->Foranea->Name = L"Foranea";
 			this->Foranea->Size = System::Drawing::Size(162, 22);
 			this->Foranea->TabIndex = 19;
@@ -345,7 +345,7 @@ namespace Proyecto_TDatabase {
 			// Origen
 			// 
 			this->Origen->Enabled = false;
-			this->Origen->Location = System::Drawing::Point(249, 304);
+			this->Origen->Location = System::Drawing::Point(269, 320);
 			this->Origen->Name = L"Origen";
 			this->Origen->Size = System::Drawing::Size(120, 22);
 			this->Origen->TabIndex = 20;
@@ -363,7 +363,7 @@ namespace Proyecto_TDatabase {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(412, 13);
+			this->dataGridView1->Location = System::Drawing::Point(665, 13);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
@@ -373,7 +373,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(449, 303);
+			this->button4->Location = System::Drawing::Point(494, 305);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(124, 37);
 			this->button4->TabIndex = 23;
@@ -417,9 +417,6 @@ namespace Proyecto_TDatabase {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
-
-			Tablas();
 
 		}
 #pragma endregion

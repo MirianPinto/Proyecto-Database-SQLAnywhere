@@ -99,7 +99,7 @@ namespace Proyecto_TDatabase {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(132, 217);
+			this->button2->Location = System::Drawing::Point(148, 219);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(90, 39);
 			this->button2->TabIndex = 1;
@@ -110,25 +110,25 @@ namespace Proyecto_TDatabase {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(263, 24);
+			this->dataGridView1->Location = System::Drawing::Point(330, 12);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(71, 41);
+			this->dataGridView1->Size = System::Drawing::Size(39, 35);
 			this->dataGridView1->TabIndex = 2;
 			this->dataGridView1->Visible = false;
 			// 
 			// domainUpDown1
 			// 
-			this->domainUpDown1->Location = System::Drawing::Point(118, 134);
+			this->domainUpDown1->Location = System::Drawing::Point(131, 155);
 			this->domainUpDown1->Name = L"domainUpDown1";
-			this->domainUpDown1->Size = System::Drawing::Size(120, 22);
+			this->domainUpDown1->Size = System::Drawing::Size(123, 22);
 			this->domainUpDown1->TabIndex = 3;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(118, 87);
+			this->label1->Location = System::Drawing::Point(128, 105);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(80, 16);
 			this->label1->TabIndex = 4;
@@ -138,7 +138,7 @@ namespace Proyecto_TDatabase {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(357, 309);
+			this->ClientSize = System::Drawing::Size(381, 315);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->domainUpDown1);
 			this->Controls->Add(this->dataGridView1);
